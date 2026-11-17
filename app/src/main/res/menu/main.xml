@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/validacao"
+        android:icon="@drawable/ic_img_validacao"
+        android:title="Validação de Estoque"
+        app:showAsAction="always"
+
+        />
+    <item
+        android:id="@+id/campanha"
+        android:title="Campanha de Vendas"
+        android:icon="@drawable/ic_trofeu"
+        android:visible="false"
+        app:showAsAction="always"
+
+        />
+
+    <item
+        android:id="@+id/clientes"
+        android:title="Cadastrar Cliente"
+        android:icon="@drawable/ic_novo"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/vendas"
+        android:title="Consultar Vendas"
+        android:icon="@drawable/ic_vendas"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/maisopcoes"
+        android:title="Mais opções"
+        android:icon="@drawable/ic_menu_logout"
+        app:showAsAction="always" >
+
+           <menu>
+
+               <item
+                   android:id="@+id/Logout"
+                   android:title="Logout"
+                   app:showAsAction="always"
+                   android:icon="@drawable/ic_logout"
+
+                   />
+
+               <item
+                   android:id="@+id/Sair"
+                   android:title="Sair do App"
+                   app:showAsAction="always"
+                   android:icon="@drawable/ic_menu_sair"
+
+                   />
+
+           </menu>
+
+    </item>
+</menu>

@@ -1,0 +1,108 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+// Segredos ficam fora do Git: em local.properties (máquina do dev) ou em variável de
+// ambiente (CI). Ex.: azure.storage.key=... / AZURE_STORAGE_KEY=...
+def localProps = new Properties()
+def localPropsFile = rootProject.file('local.properties')
+if (localPropsFile.exists()) {
+    localPropsFile.withInputStream { localProps.load(it) }
+}
+def azureStorageKey = localProps.getProperty('azure.storage.key') ?: System.getenv('AZURE_STORAGE_KEY') ?: ''
+if (azureStorageKey.isEmpty()) {
+    logger.warn('azure.storage.key não definida em local.properties: o envio de PDF ao Azure vai falhar.')
+}
+
+android {
+    compileSdkVersion 36
+    defaultConfig {
+        applicationId "br.com.acalfortaleza.fikonmais"
+        minSdkVersion 21
+        targetSdkVersion 36
+        versionCode 1224
+        versionName "1.49.4"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "AZURE_STORAGE_KEY", "\"${azureStorageKey}\""
+    }
+    buildFeatures {
+        buildConfig true
+    }
+    compileOptions {
+
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    viewBinding {
+        enabled true
+    }
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
+    namespace 'br.com.acalfortaleza.fikonmais'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleCompatible
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //implementation 'com.edwardvanraak:MaterialBarcodeScanner:0.0.6-ALPHA'
+    implementation 'com.google.android.gms:play-services-vision:17.0.2'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.github.medyo:fancybuttons:1.9.0'
+    implementation 'com.github.ganfra:material-spinner:2.0.0'
+    implementation 'com.github.MdFarhanRaja:SearchableSpinner:2.0'
+    implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
+    implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
+    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
+    //implementation 'com.cielo.lio:order-manager:1.4.0'
+    implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
+    implementation 'com.applandeo:material-calendar-view:1.9.2'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06'
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+
+
+    implementation 'com.microsoft.azure.android:azure-storage-android:2.0.0@aar'
+
+    def room_version = '2.5.2'
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    implementation files('libs/additionnal.jar')
+
+
+    implementation files('libs/mail.jar')
+
+    implementation files('libs/activation.jar')
+
+
+}

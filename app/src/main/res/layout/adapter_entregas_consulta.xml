@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ligthgrayline"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="8dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/adp_ent_natjur"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="?attr/actionModeBackground"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_pessoaf"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/adp_ent_consultor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Consultor: Informatica "
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/adp_ent_cgccpf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="Cgccpf: 67208177368"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/adp_ent_natjur"
+                app:layout_constraintTop_toBottomOf="@+id/adp_ent_consultor" />
+
+
+            <TextView
+
+                android:id="@+id/adp_ent_cliente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="4dp"
+                android:text="Jefferson Di Paulo Martins Almeida Araujo"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/adp_ent_natjur"
+                app:layout_constraintTop_toBottomOf="@+id/adp_ent_cgccpf" />
+
+
+            <TextView
+
+                android:id="@+id/adp_ent_fantasia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/adp_ent_natjur"
+                app:layout_constraintTop_toBottomOf="@+id/adp_ent_cliente" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/ligthgrayline"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/adp_ent_fantasia">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_endentrega" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/adp_ent_endereco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="4dp"
+                        android:text="Rua 904 numero 135, Conjunto Ceara "
+
+                        />
+
+                    <TextView
+                        android:id="@+id/adp_ent_complemento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="3dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pedido" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/statusok" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Pedido"
+                    android:textColor="#000"
+                    android:textSize="08sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_pedido"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="1759090"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_dtpedido"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="10/10/2018"
+                    android:textAlignment="center"
+                    android:textSize="08sp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="51dp"
+
+                android:background="#000"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/divider3"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <ImageView
+                    android:id="@+id/adp_ent_imglote"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lote" />
+
+                <ImageView
+                    android:id="@+id/adp_ent_statuslote"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/statusinativo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Lote"
+                    android:textColor="#000"
+                    android:textSize="08sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_lote"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Lote não montado"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_lotepeso"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textAlignment="center"
+                    android:textSize="08sp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+
+                android:layout_marginTop="51dp"
+                android:background="#000"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/divider2"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <ImageView
+                    android:id="@+id/adp_ent_imgseparacao"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/separacao" />
+
+                <ImageView
+                    android:id="@+id/adp_ent_statusseparacao"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/statusinativo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Separação"
+                    android:textColor="#000"
+                    android:textSize="08sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_separacao"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Pedido não separado"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider4"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="51dp"
+                android:background="#000"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout5"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/divider4"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <ImageView
+                    android:id="@+id/adp_ent_imgfaturamento"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/faturado" />
+
+                <ImageView
+                    android:id="@+id/adp_ent_statusfaturado"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/statusinativo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Faturamento"
+                    android:textColor="#000"
+                    android:textSize="08sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_faturamento"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Pedido não fatutado"
+                    android:textAlignment="center"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_faturamentoStatus"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textAlignment="center"
+                    android:textSize="08sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider5"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="51dp"
+                android:background="#000"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout6"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@+id/divider5"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <ImageView
+                    android:id="@+id/adp_ent_imgtransporte"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/saiuentrega" />
+
+                <ImageView
+                    android:id="@+id/adp_ent_statustransporte"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/statusinativo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Transporte"
+                    android:textColor="#000"
+                    android:textSize="08sp" />
+
+
+                <TextView
+                    android:id="@+id/adp_ent_transporte"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Previsão 18/10/2018"
+                    android:textAlignment="center"
+                    android:textSize="08sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_transporteromaneio"
+                    android:layout_width="44dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:textAlignment="center"
+                    android:textSize="08sp" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider6"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="51dp"
+                android:background="#000"
+                app:layout_constraintStart_toEndOf="@+id/linearLayout7"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                android:baselineAligned="false"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/divider6"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <ImageView
+                    android:id="@+id/adp_ent_imgentrega"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/entregue" />
+
+                <ImageView
+                    android:id="@+id/adp_ent_statusentrega"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/statusinativo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Entrega"
+                    android:textColor="#000"
+                    android:textSize="08sp" />
+
+                <TextView
+                    android:id="@+id/adp_ent_entrega"
+                    android:layout_width="45dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Aguardando"
+                    android:textAlignment="center"
+                    android:textSize="08sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/adp_ent_fone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="3dp"
+                android:text=""
+                android:textAlignment="viewEnd"
+                app:layout_constraintBottom_toTopOf="@+id/adp_ent_cliente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/adp_ent_cgccpf"
+                app:layout_constraintTop_toBottomOf="@+id/adp_ent_consultor" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

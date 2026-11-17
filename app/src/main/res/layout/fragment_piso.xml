@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroudcolor"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PISO"
+        android:textColor="#FFFFFF"
+        android:textSize="8pt"
+        android:background="@color/primary"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/layoutComprimentoPiso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:hint="Comprimento"
+                app:errorEnabled="true" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtComprimento_Piso"
+                    android:drawableLeft="@drawable/ic_comprimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edtLargura_piso"
+                    android:digits="0123456789.,"
+                    android:maxLength="10"
+                    android:singleLine="true">
+
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutLarguraPiso"
+                android:layout_marginLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Largura"
+                app:errorEnabled="false"  >
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/edtLargura_piso"
+                    android:drawableLeft="@drawable/ic_largura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:digits="0123456789.,"
+                    android:maxLength="10"
+                    android:singleLine="true"
+
+
+                    >
+
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="4"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="OU"
+                android:layout_gravity="center_horizontal"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/layoutMetroPiso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:hint="Área total (M2)"
+                app:errorEnabled="true" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtMetro_Piso"
+                    android:drawableLeft="@drawable/ic_metroquadrado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edtLargura_Piso"
+                    android:digits="0123456789.,"
+                    android:maxLength="10"
+                    android:singleLine="true">
+
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/btn_calcular_piso"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                fancy:fb_borderColor="#2196f3"
+                fancy:fb_borderWidth="2dp"
+                fancy:fb_defaultColor="#FFFFFF"
+                fancy:fb_focusColor="#1976D2"
+                fancy:fb_radius="30dp"
+                fancy:fb_text="CALCULAR"
+                fancy:fb_textSize="10sp"
+                fancy:fb_textColor="#2196f3"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+

@@ -1,0 +1,141 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:colorControlNormal">@color/secondary_text</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+        <item name="android:icon">@color/icons</item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/primary_dark</item>
+        <item name="android:divider">@color/divider</item>
+
+
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeLogin" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:colorControlNormal">@color/secondary_text</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:icon">@color/icons</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/primary_dark</item>
+        <item name="android:divider">@color/divider</item>
+
+
+    </style>
+
+
+    <!-- Base application theme. -->
+    <style name="AppThemeCliente" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:colorControlNormal">@color/secondary_text</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="windowActionBarOverlay">false</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:icon">@color/icons</item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/primary_dark</item>
+        <item name="android:divider">@color/divider</item>
+
+
+
+    </style>
+
+
+    <style name= "AppTheme.DialogButton">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/primary_text</item>
+        <item name="colorPrimaryDark">@color/primary_text</item>
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
+    <style name="AppTheme.LegacyToolbar" parent="AppThemeCliente">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="android:statusBarColor">@color/primary_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.Popup" parent="Theme.MaterialComponents.Light.DarkActionBar" >
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:colorControlNormal">@color/secondary_text</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="android:icon">@color/icons</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/primary_dark</item>
+        <item name="android:divider">@color/divider</item>
+
+    </style>
+
+    <style name="AppTheme.PopupNoDimiss" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:colorControlNormal">@color/secondary_text</item>
+        <item name="android:colorControlActivated">@color/primary</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:targetApi="35">true</item>
+        <item name="android:icon">@color/icons</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorButtonNormal" tools:targetApi="lollipop">@color/primary_dark</item>
+        <item name="android:divider">@color/divider</item>
+
+    </style>
+
+</resources>

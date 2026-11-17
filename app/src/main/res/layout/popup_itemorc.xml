@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroudcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/pop_form_btnFechar2"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Alteração"
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/backgroudbuttom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+    </View>
+
+    <TextView
+        android:id="@+id/pop_orc_produto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:text="Argamassa ACII Colamix Cinza 15kg Rejuntamix "
+        android:textAlignment="center"
+        android:textColor="@color/primary_text"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider7" />
+
+
+
+
+
+
+    <Button
+        android:id="@+id/pop_orc_btn_Alterar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/backgroudbuttom"
+        android:text="Alterar"
+        android:textColor="@color/icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_txtTotal"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutQuantidade"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_produto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantidade"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutDesc"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_layoutQuantidade">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="% Desconto"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pop_orc_produto" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutValorDesc"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_layoutDesc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtvlDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Valor do desconto"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="478dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutMotivo"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_layoutValorDesc">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtMotivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_btn_consultar"
+            android:drawableTint="@color/secondary_text"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="Motivo de desconto"
+            android:maxLines="1"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutPreco"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_layoutMotivo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtPreco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="Valor do produto"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/PopupItemOrc_LayoutFluigEncomenda"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pop_orc_layoutPreco">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/PopupItemOrc_EdtFluigEncomenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Fluig de Encomenda"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/PopupItemOrc_LayoutPrevisaoEncomenda"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PopupItemOrc_LayoutFluigEncomenda">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/PopupItemOrc_EdtPrevisaoEncomenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableTint="@color/secondary_text"
+                android:inputType="date"
+                android:maxLines="1"
+                android:hint="Data de Previsão da Encomenda" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/pop_orc_txtTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:text="Total: R$50,00"
+            android:textColor="@color/roxo"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/PopupItemOrc_LayoutPrevisaoEncomenda" />
+
+
+        <ImageView
+            android:id="@+id/pop_orc_indicador"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/pop_orc_txtTotal"
+            app:layout_constraintTop_toBottomOf="@id/PopupItemOrc_LayoutPrevisaoEncomenda" />
+
+
+        <ImageButton
+            android:id="@+id/popup_itemOrc_btnAmbientes"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/backgroudcolor"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_ambientes_produtos"
+            app:layout_constraintBottom_toTopOf="@+id/pop_orc_btn_Alterar"
+            app:layout_constraintEnd_toStartOf="@+id/pop_orc_indicador"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/pop_orc_txtTotal"
+            app:layout_constraintTop_toBottomOf="@id/PopupItemOrc_LayoutPrevisaoEncomenda" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

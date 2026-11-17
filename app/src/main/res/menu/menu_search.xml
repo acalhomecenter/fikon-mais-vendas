@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_tab_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        android:title="Conultar entrega"/>
+
+    <item
+        android:title="@string/app_name"
+        android:id="@+id/maisopcoes"
+        android:icon="@drawable/ic_more_vert_black_24dp"
+        app:showAsAction="always" >
+     <menu>
+         <item
+             android:id="@+id/menu_order_az"
+             android:title="Ordernar por Nome"
+             app:showAsAction="always"
+             android:icon="@drawable/ic_order_texto"
+              />
+
+
+         <item
+             android:id="@+id/menu_order_preco"
+             android:title="Ordernar por Preço"
+             app:showAsAction="always"
+             android:icon="@drawable/ic_order_valor"
+              />
+    </menu>
+    </item>
+</menu>

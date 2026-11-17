@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frame_ap_layoutValor"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frame_ap_edtvalor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Valor"
+                android:inputType="numberDecimal"
+                android:maxEms="10"
+                android:maxLines="1"
+                app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frame_ap_layoutQtdParcelas"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_ap_layoutValor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frame_ap_edtQtdPArcelas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Parcelas"
+                android:inputType="numberDecimal"
+                android:maxEms="10"
+                android:maxLines="1"
+                app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frame_ap_layoutDtVencimento"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_ap_layoutQtdParcelas">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frame_ap_edtVencimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_btn_consultar"
+                android:drawableTint="@color/secondary_text"
+                android:focusable="false"
+                android:hint="Data de vencimento"
+                android:inputType="date"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frame_ap_layoutAutorizacao"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_ap_layoutDtVencimento">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frame_ap_edtAutorizacao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Num. Autorização"
+                android:imeActionLabel="pronto"
+                android:imeOptions="actionDone"
+                android:inputType="numberDecimal"
+                android:maxEms="2"
+                android:maxLines="1"
+                app:layout_constraintStart_toStartOf="parent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/frame_ap_layoutConveniada"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="2"
+            android:nextFocusDown="@id/frame_ap_edtConveniada"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_ap_layoutAutorizacao">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/frame_ap_edtConveniada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/ic_btn_consultar"
+                android:drawableTint="@color/secondary_text"
+                android:focusable="false"
+                android:hint="Conveniada"
+                android:inputType="date"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/frame_ap_btn_Add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/roxo"
+            android:text="+"
+            android:textColor="@color/icons"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_ap_layoutConveniada"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/frame_ap_btnConsultarPlanos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="3dp"
+            android:background="@color/primary_dark"
+            android:padding="10dp"
+            android:text="Consultar Planos"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frame_ap_layoutConveniada" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

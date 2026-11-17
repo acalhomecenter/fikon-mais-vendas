@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ligthgrayline"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <FrameLayout
+
+            android:id="@+id/frameLayout2"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:background="@color/backgroudcolor"
+            app:layout_constraintBottom_toBottomOf="@+id/FragmentProduto_ColInfo"
+            app:layout_constraintEnd_toStartOf="@+id/FragmentProduto_ColInfo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.48">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+
+                android:layout_height="350dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/icons" />
+
+            <ImageView
+                android:id="@+id/imgSelecao"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_img_selecao"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/imgAcelerado"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_img_acelerado"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/btnToggleEtiqueta"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Ocultar situação do produto"
+                android:padding="8dp"
+                android:src="@drawable/ic_visibility"
+                android:tint="#2E2E2E" />
+
+            <ImageView
+                android:id="@+id/etiqueta"
+                android:layout_width="150dp"
+                android:layout_marginTop="50dp"
+
+                android:layout_height="250dp"/>
+
+            <ImageButton
+                android:id="@+id/fragmentProduto_btnAmbientesProduto"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="50dp"
+                android:background="@color/icons"
+                custom:srcCompat="@drawable/ic_outline_living_40" />
+
+        </FrameLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/FragmentProduto_ColInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/frameLayout2"
+            app:layout_constraintTop_toTopOf="@+id/frameLayout2">
+
+            <TextView
+                android:id="@+id/codigoItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(000000)"
+                android:textColor="#757575"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- CARRINHO E NOTIFICACAO NA PONTA DIREITA -->
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/prod_carrinho"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_carrinho" />
+
+                <ImageView
+                    android:id="@+id/prod_notificacao"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/statuserro"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/prod_txtNotificacao"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="top|end"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/icons"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/descricao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="40dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="PRODUTO"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/codigoItem" />
+
+            <TextView
+                android:id="@+id/prod_txtpromocao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descricao" />
+
+            <View
+                android:id="@+id/FragmentProduto_BoxPreco"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_preco_box"
+                app:layout_constraintBottom_toBottomOf="@+id/FragmentProduto_TxtPrecoPor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/FragmentProduto_TxtPrecoDe" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtPrecoDe"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:paddingStart="12dp"
+                android:text="De: R$ 0,00"
+                android:textAlignment="viewStart"
+                android:textColor="#757575"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prod_txtpromocao" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtLabelPor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="6dp"
+                android:text="Por:"
+                android:textColor="#F44336"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_TxtPrecoDe" />
+
+            <TextView
+                android:id="@+id/preco"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:paddingStart="12dp"
+                android:singleLine="true"
+                android:text="R$ 0,00"
+                android:textAlignment="viewEnd"
+                android:textColor="#F44336"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/unidade"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_TxtLabelPor" />
+
+            <TextView
+                android:id="@+id/unidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="6dp"
+                android:text="UN"
+                android:textColor="#F44336"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/preco"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtTipoPreco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/preco" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtEconomize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_economize"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:text="Economize R$ 0,00 (0%)"
+                android:textAlignment="center"
+                android:textColor="#4CAF50"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_TxtTipoPreco" />
+
+            <View
+                android:id="@+id/FragmentProduto_BoxPrecoDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_TxtEconomize" />
+
+            <View
+                android:id="@+id/FragmentProduto_BoxPrecoInferior"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_preco_box_bottom_neutral"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/FragmentProduto_TxtPrecoPor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_BoxPrecoDivider" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtPrecoPor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="8dp"
+                android:paddingStart="12dp"
+                android:text="Preço à prazo: R$ 0,00"
+                android:textColor="@color/mdtp_accent_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_BoxPrecoDivider" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_txtAtualizacaoPreco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Última Atualização: 00/00/0000"
+                android:textSize="10sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_TxtPrecoPor" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_top_blocks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="frameLayout2,FragmentProduto_ColInfo" />
+
+        <LinearLayout
+            android:id="@+id/FragmentProduto_LayoutPromocaoInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_preco_box"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrier_top_blocks">
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtNomePromocao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""
+                android:textColor="#333333"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/FragmentProduto_TxtValidadePromocao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text=""
+                android:textColor="#666666"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgBarcode"
+            android:layout_width="32dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_LayoutPromocaoInfo"
+            custom:srcCompat="@drawable/ic_nav_barcode" />
+
+        <ImageView
+            android:id="@+id/imgConcorrente"
+            android:layout_width="21dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgBarcode"
+            custom:srcCompat="@drawable/ic_nav_cnpj" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layoutEdtQtd"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Quantidade"
+            app:endIconDrawable="@drawable/ic_baseline_add_circle_blue_50"
+            app:endIconMode="custom"
+            app:errorEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgBarcode"
+            app:layout_constraintTop_toBottomOf="@+id/FragmentProduto_LayoutPromocaoInfo"
+            app:startIconDrawable="@drawable/ic_baseline_remove_circle_blue_50">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtQtd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:layout_marginTop="100dp"
+
+                android:textAlignment="center" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/bt_incluirOrc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/backgroudbuttom"
+            android:text="Incluir no Orçamento"
+            android:textColor="#ffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bt_incluirPed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutEdtQtd" />
+
+        <Button
+            android:id="@+id/bt_incluirPed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/backgroudbuttom"
+            android:text="Incluir no Pedido"
+            android:textColor="#ffff"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bt_incluirOrc"
+            app:layout_constraintTop_toBottomOf="@+id/layoutEdtQtd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

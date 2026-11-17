@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item
+        android:id="@+id/ligar"
+        android:icon="@drawable/ic_menu_ligar"
+        android:title="Ligar para o cliente"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:icon="@drawable/ic_menu_ocorrencia"
+        android:title="Whatsapp"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:title="Liberar Pedido"
+        app:showAsAction="always"
+        />
+
+
+</menu>

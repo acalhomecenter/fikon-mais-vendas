@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/icons"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ped_adp_indicadorEncomenda"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_adap_encomenda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcliente" />
+
+        <ImageView
+            android:id="@+id/ped_adp_indicadorTransf"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_adap_tranf"
+            app:layout_constraintEnd_toStartOf="@+id/ped_adp_indicadorEncomenda"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcliente" />
+
+        <ImageView
+            android:id="@+id/ped_adp_indicadorEntrega"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_adap_entrega"
+            app:layout_constraintEnd_toStartOf="@+id/ped_adp_indicadorTransf"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcliente" />
+
+        <ImageView
+            android:id="@+id/ped_adp_indicadorEsp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_adap_especif"
+            app:layout_constraintEnd_toStartOf="@+id/ped_adp_indicadorEntrega"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcliente" />
+
+        <TextView
+            android:id="@+id/ped_adp_numped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Nº ORC.: 228350"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ped_adp_txtcliente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+
+            android:text="Jefferson Di Paulo Martins Almeida Arauj "
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ped_adp_imgCliente"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_numped" />
+
+
+        <TextView
+            android:id="@+id/ped_adp_txtvalidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Válidade: 19/02/2019"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/primary_text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/ped_adp_indicador"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ped_adp_numped"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ped_adp_txtvalidade">
+
+            <TextView
+                android:id="@+id/AdapterPedidos_VendaPerfeitaConversao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="20%" />
+
+            <TextView
+                android:id="@+id/AdapterPedidos_VendaPerfeitaSKU"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="40%" />
+
+            <TextView
+                android:id="@+id/AdapterPedidos_VendaPerfeitaTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="60%" />
+
+            <TextView
+                android:id="@+id/AdapterPedidos_VendaPerfeitaDesconto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="80%" />
+
+            <TextView
+                android:id="@+id/AdapterPedidos_VendaPerfeitaEntrega"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="2dp"
+                android:text="100%" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ped_adp_txtcpf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Cpf: 672.081.773-68"
+            app:layout_constraintEnd_toStartOf="@+id/ped_adp_indicadorEsp"
+            app:layout_constraintStart_toEndOf="@+id/ped_adp_imgCliente"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcliente" />
+
+        <TextView
+            android:id="@+id/ped_adp_txtlote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:text="Lote: 20521"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ped_adp_txtmargem"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcpf" />
+
+        <TextView
+            android:id="@+id/ped_adp_txttotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="R$ 1.000,00"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ped_adp_txtconsultor"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtmargem" />
+
+
+        <ImageView
+            android:id="@+id/ped_adp_indicador"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/fundo_bt_flutuante_orange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ped_adp_imgCliente"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_pessoam"
+            app:layout_constraintBottom_toTopOf="@+id/ped_adp_txttotal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_numped" />
+
+
+        <TextView
+            android:id="@+id/ped_adp_txtmargem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:text="Margem: 35,32%"
+            android:textColor="@color/primary"
+            app:layout_constraintStart_toEndOf="@+id/ped_adp_imgCliente"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtcpf" />
+
+        <TextView
+            android:id="@+id/ped_adp_txtconsultor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="Consultor: Jefferson Di Paulo"
+            android:textAlignment="viewEnd"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ped_adp_txtmargem"
+            app:layout_constraintVertical_bias="0.541" />
+
+        <ImageView
+            android:id="@+id/ped_adp_imgmotor"
+            android:layout_width="53dp"
+            android:layout_height="42dp"
+            app:layout_constraintStart_toEndOf="@+id/ped_adp_numped"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/motorpromo" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

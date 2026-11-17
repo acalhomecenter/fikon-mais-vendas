@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroudcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/pop_form_btnFechar2"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Alteração Global"
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/divider7"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/backgroudbuttom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25">
+
+    </View>
+
+
+    <Button
+        android:id="@+id/pop_orc_btn_Alterar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/backgroudbuttom"
+        android:text="Alterar"
+        android:textColor="@color/icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_layoutMotivotodos"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutDescTodos"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="% Desconto"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:maxLines="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pop_orc_produto" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_orc_layoutMotivotodos"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_orc_layoutDescTodos">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_orc_edtMotivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/ic_btn_consultar"
+            android:drawableTint="@color/secondary_text"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="Motivo de desconto"
+            android:maxLines="1"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

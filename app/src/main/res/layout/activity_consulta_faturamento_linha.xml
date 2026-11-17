@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/ligthgrayline"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsultaFaturamentoLinhaActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/fatl_appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/fatl_status_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/fatl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fatl_appbar">
+
+        <LinearLayout
+            android:id="@+id/fat_ind_atingido"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/green_trans"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Atingiu"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/fatl_txtatingido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fat_ind_naoatingido"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/laranja_trans"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Não atingiu"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/fatl_txtnaoatingido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fat_ind_semmeta"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/roxotrans"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Sem meta"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/fatl_txtSemmeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/fatl_valor_premio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="Valor Premiação: R$ 100,00"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        fancy:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintTop_toBottomOf="@+id/linearLayout2"></TextView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backgroudlist"
+        android:elevation="4dp"
+        fancy:layout_constraintBottom_toBottomOf="parent"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintHorizontal_bias="1.0"
+        fancy:layout_constraintStart_toStartOf="parent"
+        fancy:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        fancy:layout_constraintVertical_bias="0.0">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fat_lista_linhas"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            fancy:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+            fancy:layout_constraintTop_toTopOf="parent"
+            fancy:layout_constraintVertical_bias="0.55">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="4dp"
+            fancy:layout_constraintBottom_toBottomOf="parent"
+            fancy:layout_constraintEnd_toEndOf="parent"
+            fancy:layout_constraintStart_toStartOf="parent"
+            fancy:layout_constraintTop_toBottomOf="@+id/fat_lista_linhas"
+            fancy:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                  android:visibility="invisible"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Métrica:"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                fancy:layout_constraintStart_toStartOf="parent"></TextView>
+
+            <TextView
+                android:id="@+id/textView38"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="invisible"
+                android:text="Pagar bonificação por quantidade de linha atingida pelo consultor, por exemplo:"
+                android:textSize="8dp"
+                fancy:layout_constraintBottom_toTopOf="@+id/textView39"
+                fancy:layout_constraintEnd_toEndOf="parent"
+                fancy:layout_constraintStart_toStartOf="parent"
+                fancy:layout_constraintTop_toBottomOf="@+id/textView37"></TextView>
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="Atingiu 16 linhas: R$ 100,00,   19 linhas R$150,00, 23 linhas R$ 250,00."
+                android:visibility="invisible"
+                android:textSize="9dp"
+                android:textStyle="bold"
+                fancy:layout_constraintEnd_toEndOf="parent"
+                fancy:layout_constraintHorizontal_bias="0.0"
+                fancy:layout_constraintStart_toStartOf="parent"
+                fancy:layout_constraintTop_toBottomOf="@+id/textView38"></TextView>
+
+            <TextView
+
+                android:id="@+id/textView41"
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:text="Gatilhos:"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                fancy:layout_constraintStart_toStartOf="parent"
+                fancy:layout_constraintTop_toBottomOf="@+id/textView39"></TextView>
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="invisible"
+                android:text="Consultor atingir meta individual (50% da premiação);"
+                android:textSize="9dp"
+                android:textStyle="bold"
+                fancy:layout_constraintBottom_toTopOf="@+id/textView46"
+                fancy:layout_constraintEnd_toEndOf="parent"
+                fancy:layout_constraintHorizontal_bias="0.0"
+                fancy:layout_constraintStart_toStartOf="parent"
+                fancy:layout_constraintTop_toBottomOf="@+id/textView41"></TextView>
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="invisible"
+                android:text="Unidade atingir meta: (100% da premiação);"
+                android:textSize="9dp"
+                android:textStyle="bold"
+                fancy:layout_constraintEnd_toEndOf="parent"
+                fancy:layout_constraintHorizontal_bias="0.0"
+                fancy:layout_constraintStart_toStartOf="parent"
+                fancy:layout_constraintTop_toBottomOf="@+id/textView42"></TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

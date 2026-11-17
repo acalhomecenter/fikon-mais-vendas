@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/ligthgrayline"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrcamentoActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/orc_appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/orc_status_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/orc_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orc_appbar">
+
+        <LinearLayout
+            android:id="@+id/orc_ind_pend"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/green_trans"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Pendentes"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/orc_txtPendentes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="3"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orc_ind_venc"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/laranja_trans"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Vencidos"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/orc_txtVencidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/orc_ind_conc"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@color/primary_dark_trans"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Concluidos"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/orc_txtConcluidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="10"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backgroudlist"
+        android:elevation="4dp"
+        fancy:layout_constraintBottom_toBottomOf="parent"
+        fancy:layout_constraintEnd_toEndOf="parent"
+        fancy:layout_constraintStart_toStartOf="parent"
+        fancy:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/orc_btn_dia"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:gravity="top"
+            fancy:fb_borderColor="#2196f3"
+            fancy:fb_borderWidth="2dp"
+            fancy:fb_defaultColor="#ffff"
+            fancy:fb_focusColor="#2196f3"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="Dia"
+            fancy:fb_textColor="#2196f3"
+            fancy:fb_textSize="12sp"
+            fancy:layout_constraintStart_toStartOf="parent"
+            fancy:layout_constraintTop_toTopOf="parent" />
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/orc_btn_mes"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="top"
+            fancy:fb_borderColor="#2196f3"
+            fancy:fb_borderWidth="2dp"
+            fancy:fb_defaultColor="#ffff"
+            fancy:fb_focusColor="#2196f3"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="Mês"
+            fancy:fb_textColor="#2196f3"
+            fancy:fb_textSize="12sp"
+            fancy:layout_constraintEnd_toStartOf="@+id/orc_btn_periodo"
+            fancy:layout_constraintHorizontal_bias="0.48"
+            fancy:layout_constraintStart_toEndOf="@+id/orc_btn_dia"
+            fancy:layout_constraintTop_toTopOf="parent" />
+
+
+        <mehdi.sakout.fancybuttons.FancyButton
+            android:id="@+id/orc_btn_periodo"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="top"
+            fancy:fb_borderColor="#2196f3"
+            fancy:fb_borderWidth="2dp"
+            fancy:fb_defaultColor="#ffff"
+            fancy:fb_focusColor="#2196f3"
+            fancy:fb_radius="30dp"
+            fancy:fb_text="Período"
+            fancy:fb_textColor="#2196f3"
+            fancy:fb_textSize="12sp"
+            fancy:layout_constraintEnd_toEndOf="parent"
+            fancy:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orc_lista_orcamento"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            fancy:layout_constraintTop_toBottomOf="@+id/orc_btn_dia">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/orc_btn_flutuante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        fancy:fabSize="mini"
+        android:background="@drawable/fundo_bt_flutuante_orc"
+        android:elevation="6dp"
+        android:src="@drawable/ic_flutuante_orc"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

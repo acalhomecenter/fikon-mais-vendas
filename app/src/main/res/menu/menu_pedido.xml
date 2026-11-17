@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_agendar"
+        android:icon="@drawable/ic_menu_agendar"
+        android:title="Agendamento de retira"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/menu_compartilhar"
+        android:title="Compartilhar orcamento"
+        android:icon="@drawable/ic_card_compartilhar"
+        app:showAsAction="always" />
+
+
+
+    <item
+        android:id="@+id/menu_endereco"
+        android:title="Alterar endereço"
+        android:icon="@drawable/ic_menu_endereco"
+        app:showAsAction="always" >
+
+
+    </item>
+</menu>

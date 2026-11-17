@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/ligthgrayline"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtCep"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toStartOf="@+id/layout_cli_edtLogradouro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtCep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cep"
+                android:inputType="number"
+                android:maxLength="8"
+                android:nextFocusDown="@id/cli_edtNumero"
+                android:singleLine="true">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtLogradouro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_cli_edtCep"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtLogradouro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="Logradouro"
+                android:inputType="text"
+                android:maxLength="15"
+                android:nextFocusDown="@id/cli_edtEndereco"
+                android:singleLine="true"
+
+
+                >
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtEndereco"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toStartOf="@+id/layout_cli_edtNumero"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtCep">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Endereço"
+                android:inputType="text"
+                android:maxLength="40"
+                android:nextFocusDown="@id/cli_edtNumero"
+                android:singleLine="true"
+
+
+                >
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtNumero"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_cli_edtEndereco"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtCep">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtNumero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nº"
+                android:inputType="number"
+                android:maxLength="9"
+                android:nextFocusDown="@id/cli_edtComplemento"
+                android:singleLine="true"
+
+
+                >
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtBairro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toStartOf="@+id/layout_cli_edtCidade"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtEndereco">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtBairro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bairro"
+                android:inputType="text"
+                android:maxLength="30"
+                android:nextFocusDown="@id/cli_edtCidade"
+                android:singleLine="true"
+
+
+                >
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtCidade"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_cli_edtBairro"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtNumero">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtCidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cidade"
+                android:inputType="text"
+                android:maxLength="60"
+                android:nextFocusDown="@id/cli_edtComplemento"
+                android:singleLine="true"
+
+
+                >
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtComplemento"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="8dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toStartOf="@+id/layout_cli_edtUf"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtBairro">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtComplemento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Complemento"
+                android:inputType="text"
+                android:maxLength="20"
+                android:nextFocusDown="@id/cli_edtUf"
+                android:singleLine="true">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtUf"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_cli_edtComplemento"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtCidade">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtUf"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="UF"
+                android:inputType="text"
+                android:maxLength="2"
+                android:singleLine="true"
+
+
+                >
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtReferencia"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtComplemento">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtReferencia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Referência"
+                android:inputType="text"
+                android:maxLength="150"
+                android:singleLine="true">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/cli_end_btnAdcionar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/backgroudbuttom"
+            android:text="Adicionar"
+            android:textColor="@color/icons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtReferencia" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cli_listaEnderecos"
+        android:layout_width="match_parent"
+        android:layout_height="238dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cli_end_btnAdcionar"
+        app:layout_constraintVertical_bias="0.0">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

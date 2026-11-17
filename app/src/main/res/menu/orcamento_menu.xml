@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_complemento"
+        android:icon="@drawable/ic_card_dadoscliente"
+        android:title="Informar os complementos"
+        android:visible="false"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_endereco"
+        android:icon="@drawable/ic_menu_endereco"
+        android:title="Alterar endereço"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/menu_contato"
+        android:icon="@drawable/ic_contato"
+        android:title="Informar o contato"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/menu_compartilhar"
+        android:title="Compartilhar orcamento"
+        android:icon="@drawable/ic_card_compartilhar"
+        app:showAsAction="always" />
+
+
+
+    <item
+        android:id="@+id/menu_integrar"
+        android:title="Integrar orcamento"
+        android:icon="@drawable/ic_card_gerar"
+        app:showAsAction="always" >
+
+
+    </item>
+</menu>

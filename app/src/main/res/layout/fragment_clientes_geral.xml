@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/ligthgrayline"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtCgccpf"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtCgccpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cpf / Cnpj"
+                android:inputType="number"
+                android:maxLength="14"
+                android:singleLine="true"
+
+
+                tools:ignore="TouchTargetSizeCheck">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtNomcli"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="100"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtCgccpf">
+
+            <com.google.android.material.textfield.TextInputEditText
+
+                android:id="@+id/cli_edtNomcli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome do cliente"
+                android:inputType="text"
+                android:maxLength="100"
+                android:singleLine="true"
+
+
+                tools:ignore="TouchTargetSizeCheck">
+
+
+            </com.google.android.material.textfield.TextInputEditText>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearPf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtNomcli">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_cli_edtNascimento"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:endIconMode="clear_text"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cli_edtNascimento"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="0dp"
+                    android:ems="10"
+                    android:hint="Data de nascimento"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/cli_edtWpp"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="8dp"
+                    android:text="Sexo"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/cli_radioMasculino"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:text="M"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                        <RadioButton
+                            android:id="@+id/cli_radionFeminino"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="1"
+                            android:text="F"
+                            android:textSize="16sp"
+                            tools:ignore="TouchTargetSizeCheck" />
+                    </RadioGroup>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:text="CONTATO"
+        android:textColor="@color/primary"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearPj"
+
+        />
+
+        <View
+            android:id="@+id/divider7"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtTelefone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toStartOf="@+id/layout_cli_edtCelular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cli_edtTelefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Telefone"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:nextFocusDown="@id/cli_edtCelular"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtCelular"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/layout_cli_edtTelefone"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtEmail">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cli_edtCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Celular"
+                android:inputType="phone"
+                android:maxLines="1"
+                tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtWpp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider7">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cli_edtWpp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Whatsapp / Celular"
+                android:inputType="phone"
+                android:maxLines="1"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_cli_edtEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtWpp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cli_edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E-mail"
+                android:imeActionLabel="pronto"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:nextFocusDown="@id/cli_edtTelefone"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/cli_btn_gravar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/backgroudbuttom"
+            android:text="Cadastrar"
+            android:textColor="@color/icons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cli_edtTelefone" />
+
+        <LinearLayout
+            android:id="@+id/linearPj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearPf">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_cli_edtFantasia"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterMaxLength="40"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/cli_edtfantasia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome de fantasia"
+                    android:inputType="text"
+                    android:maxLength="40"
+                    android:singleLine="true"
+
+
+                    >
+
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:endIconMode="clear_text"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/cli_edtInscricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Inscrição estadual"
+                    android:inputType="number"
+                    android:maxLength="14"
+                    android:singleLine="true"
+
+
+                    >
+
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/cli_fixo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="wpp Fixo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textView15"
+            app:layout_constraintTop_toBottomOf="@+id/linearPj" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

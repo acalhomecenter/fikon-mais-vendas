@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/backgroudcolor"
+    android:padding="12dp">
+
+    <Button
+        android:id="@+id/popup_verifica_promo_fikon_btn_fechar"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/popup_verifica_promo_fikon_titulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        android:text="Verificar Promoções "
+        android:textColor="@color/primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/popup_verifica_promo_fikon_btn_fechar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/popup_verifica_promo_fikon_divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/popup_verifica_promo_fikon_titulo" />
+
+    <Button
+        android:id="@+id/popup_verifica_promo_fikon_btn_verificar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/backgroudbuttom"
+        android:text=" VERIFICAR PROMOÇÕES ATIVAS"
+        android:textColor="@color/icons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/popup_verifica_promo_fikon_divider" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/popup_verifica_promo_fikon_scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:background="@android:color/white"
+        android:maxHeight="420dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@id/popup_verifica_promo_fikon_btn_ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/popup_verifica_promo_fikon_btn_verificar">
+
+        <TextView
+            android:id="@+id/popup_verifica_promo_fikon_txt_resultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/popup_verifica_promo_fikon_btn_ok"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/backgroudbuttom"
+        android:text="OK"
+        android:textColor="@color/icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

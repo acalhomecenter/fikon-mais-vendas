@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:background="@color/ligthgrayline"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_metadia"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="top"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_projecao"
+        app:layout_constraintStart_toEndOf="@+id/btn_metames"
+        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="#ffff"
+        fancy:fb_focusColor="#2196f3"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Dia"
+        fancy:fb_textColor="#2196f3"
+        fancy:fb_textSize="12sp" />
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_projecao"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="top"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_metadia"
+        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="#ffff"
+        fancy:fb_focusColor="#2196f3"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Projeção"
+        fancy:fb_textColor="#2196f3"
+        fancy:fb_textSize="12sp">
+
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_metames"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="top"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_metadia"
+        app:layout_constraintStart_toStartOf="parent"
+        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="#ffff"
+        fancy:fb_focusColor="#2196f3"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Mês"
+        fancy:fb_textColor="#2196f3"
+        fancy:fb_textSize="12sp" />
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:visibility="invisible">
+
+        </FrameLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_orcamento"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_clientes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cerclebackgroudpurple"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_orcamento" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Orçamento"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Consulta e criação de novos orçamentos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_clientes"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_orcamento"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cerclebackgroudgreen"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_clientes" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Nossos Clientes"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Consulte aqui os nossos clientes Acal"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_cnpj"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_entregas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_orcamento">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cerclebackgroudpink"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_cnpj" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Consultar Pedido"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Consulte aqui dados referente aos pedidos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_entregas"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_cnpj"
+        app:layout_constraintTop_toBottomOf="@+id/btn_clientes">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cerclebackgroudyellow"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_entregas" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Entregas"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Consulte aqui o status da entrega, do seu pedido"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_consultar"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_margin="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cnpj">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/cerclebackgroudazul"
+                android:padding="10dp"
+                android:src="@drawable/ic_menu_barcode" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Consultar produto"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/divider"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Leitor de código de barras"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_Indicadores"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_Faturamento"
+            app:layout_constraintTop_toBottomOf="@+id/btn_consultar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/cerclebackgroudblack"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_img_indicador" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Indicadores"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/divider"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Veja aqui seus indicadores"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_Faturamento"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_Indicadores"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_consultar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/cerclebackgroudgreen"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_main_faturamento" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Faturamento"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/divider"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Veja aqui seus cupons/devoluçoes"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="7sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+

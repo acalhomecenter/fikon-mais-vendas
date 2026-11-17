@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/mapa"
+        android:icon="@drawable/ic_menu_mapa"
+        android:title="Ver no mapa"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/ligar"
+        android:icon="@drawable/ic_menu_ligar"
+        android:title="Ligar para o cliente"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/ocorrencia"
+        android:icon="@drawable/ic_menu_ocorrencia"
+        android:title="Ver ocorrência"
+        app:showAsAction="always"
+        />
+
+
+</menu>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="16dp"
+    android:background="@color/icons"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="2dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/enc_adp_numped"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Nº ORC.: 228350"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enc_adp_txtcliente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:text="Jefferson Di Paulo Martins Almeida Arauj "
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/enc_adp_imgCliente"
+            app:layout_constraintTop_toBottomOf="@+id/enc_adp_numped" />
+
+
+        <TextView
+            android:id="@+id/enc_adp_txtvalidade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Válidade: 19/02/2019"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/primary_text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/enc_adp_indicador"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/enc_adp_numped"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enc_adp_txtvalidade"/>
+
+        <TextView
+            android:id="@+id/enc_adp_txtcpf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Cpf: 672.081.773-68"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/enc_adp_imgCliente"
+            app:layout_constraintTop_toBottomOf="@+id/enc_adp_txtcliente" />
+
+        <TextView
+            android:id="@+id/enc_adp_txtstatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Pendente"
+            android:textAlignment="viewEnd"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/enc_adp_txtcpf"
+            app:layout_constraintTop_toBottomOf="@+id/enc_adp_txtcliente" />
+
+        <TextView
+            android:id="@+id/enc_adp_txttotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="R$ 1.000,00"
+            android:textColor="@color/primary"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/enc_adp_txtconsultor"
+            app:layout_constraintStart_toStartOf="parent"
+             />
+
+
+        <ImageView
+            android:id="@+id/enc_adp_indicador"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/fundo_bt_flutuante_orange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/enc_adp_imgCliente"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_pessoam"
+            app:layout_constraintBottom_toTopOf="@+id/enc_adp_txttotal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enc_adp_numped" />
+
+
+        <TextView
+            android:id="@+id/enc_adp_txtProduto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:text="Produto"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/enc_adp_imgCliente"
+            app:layout_constraintTop_toBottomOf="@+id/enc_adp_txtcpf" />
+
+        <TextView
+            android:id="@+id/enc_adp_txtconsultor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            android:text="Consultor: Jefferson Di Paulo"
+            android:textAlignment="viewEnd"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enc_adp_txtProduto"
+            app:layout_constraintVertical_bias="0.541" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

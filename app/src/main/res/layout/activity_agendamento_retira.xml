@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/icons"
+    tools:context=".AgendamentoRetiraActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/agendamento_retira_appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/agendamento_retira_status_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/agendamento_retira_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/agendamento_retira_scroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/agendamento_retira_appbar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/agen_adp_indicadorEncomenda"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_adap_encomenda"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtcliente" />
+
+            <ImageView
+                android:id="@+id/agen_adp_indicadorTransf"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_adap_tranf"
+                app:layout_constraintEnd_toStartOf="@+id/agen_adp_indicadorEncomenda"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtcliente" />
+
+            <ImageView
+                android:id="@+id/agen_adp_indicadorEntrega"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_adap_entrega"
+                app:layout_constraintEnd_toStartOf="@+id/agen_adp_indicadorTransf"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtcliente" />
+
+            <TextView
+                android:id="@+id/agen_adp_numped"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Nº ORC.: 228350"
+                android:textColor="@color/primary_text"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agen_adp_txtcliente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+
+                android:text="Jefferson Di Paulo Martins Almeida Arauj "
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/agen_adp_imgCliente"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_numped" />
+
+
+            <TextView
+                android:id="@+id/agen_adp_txtvalidade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:text="Válidade: 19/02/2019"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/primary_text"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/agen_adp_indicador"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/agen_adp_numped"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/agen_adp_txtcpf"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Cpf: 672.081.773-68"
+                app:layout_constraintEnd_toStartOf="@+id/agen_adp_indicadorEntrega"
+                app:layout_constraintStart_toEndOf="@+id/agen_adp_imgCliente"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtcliente" />
+
+            <TextView
+                android:id="@+id/agen_adp_txtlote"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:text="Lote: 20521"
+                android:textAlignment="textEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/agen_adp_txtPeso"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtcpf" />
+
+            <TextView
+                android:id="@+id/agen_adp_txtSituacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Sem Agendamento"
+                android:textColor="@color/primary"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/agen_adp_txtconsultor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtPeso" />
+
+
+            <ImageView
+                android:id="@+id/agen_adp_indicador"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/fundo_bt_flutuante_orange"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/agen_adp_imgCliente"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_pessoam"
+                app:layout_constraintBottom_toTopOf="@+id/agen_adp_txtSituacao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_numped" />
+
+
+            <TextView
+                android:id="@+id/agen_adp_txtPeso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:text="2.000,00 Kg"
+                android:textColor="@color/primary"
+                app:layout_constraintStart_toEndOf="@+id/agen_adp_imgCliente"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtcpf" />
+
+            <TextView
+                android:id="@+id/agen_adp_txtconsultor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="8dp"
+                android:text="Consultor: Jefferson Di Paulo"
+                android:textAlignment="viewEnd"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/agen_adp_txtPeso"
+                app:layout_constraintVertical_bias="0.541" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+        <CalendarView
+            android:id="@+id/agen_calendario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agen_swit_paletizado">
+
+
+        </CalendarView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/agen_list_horario"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agen_calendario">
+
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Switch
+            android:id="@+id/agen_swit_paletizado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Paletizado"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginEnd="3dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/backgroudcolor"
+    android:clickable="true"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="2dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/adapter_itemOrc_desconto"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toStartOf="@+id/adp_orc_vlDesc"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_percDesc"
+            app:layout_constraintTop_toBottomOf="@id/adp_ped_txtComissao"
+            app:srcCompat="@drawable/desconto_produto" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@drawable/backgroundsplash"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/adp_ped_vlTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="5dp"
+            android:text="Tot. Item R$ 10.000,00"
+            android:textColor="@color/roxo"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/adapter_itemOrc_imgAmbientes"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_imagem"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/adp_ped_txtQtd"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="5dp"
+            android:text="1132.42"
+            android:textAlignment="center"
+            android:textColor="@color/primary_text"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_txtQtd2"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <TextView
+            android:id="@+id/adp_ped_txtComissao"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:gravity="end"
+            android:includeFontPadding="false"
+            android:text=""
+            android:textColor="@color/primary_text"
+            android:textSize="10sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/adp_ped_txtQtd"
+            app:layout_constraintStart_toStartOf="@+id/adp_ped_txtQtd2"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_vlTotal" />
+
+        <TextView
+            android:id="@+id/adp_ped_txtQtd2"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:text="Qtd:"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/primary_text"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@+id/adp_ped_txtQtd"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_preco"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+        <ImageView
+            android:id="@+id/adp_ped_imagem"
+            android:layout_width="80dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtCodigo" />
+
+        <ImageView
+            android:id="@+id/adapter_itemOrc_imgAmbientes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtComissao"
+            app:srcCompat="@drawable/ic_ambientes_produtos" />
+
+        <TextView
+            android:id="@+id/adp_ped_txtDescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Piso Cerâmico Esmaltado Borda Não retificada 57x57 cm Atenas Cinza HD Tipo A Cerbras"
+            android:textColor="@color/primary_text"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/adp_ped_indicador"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_imagem"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_nav_barcode"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_imagem"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtDescricao" />
+
+        <ImageView
+            android:id="@+id/imgConcorrente"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_nav_cnpj"
+            app:layout_constraintStart_toEndOf="@id/AdapterItemOrcamento_PesoTotal"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtDescricao" />
+
+        <TextView
+            android:id="@+id/adp_orc_txtmargem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="end"
+
+            android:text="38.45%"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgConcorrente"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtDescricao" />
+
+
+        <TextView
+            android:id="@+id/adp_ped_txtBarcode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="4dp"
+            android:text="7894568522356"
+            android:textSize="12sp"
+
+            app:layout_constraintEnd_toStartOf="@id/AdateperItemOrcamento_ImagemPeso"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtDescricao" />
+
+        <TextView
+            android:id="@+id/adp_ped_txtCodigo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:text="(164788)"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toStartOf="@+id/adp_ped_txtDescricao"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/adp_ped_preco"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="2"
+            android:gravity="left"
+            android:text="R$: 10,90"
+            android:textColor="@color/primary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/adp_ped_txtQtd2"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_imagem"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
+        <TextView
+            android:id="@+id/adp_ped_percDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="8dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toStartOf="@+id/adp_orc_vlDesc"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_imagem"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtComissao" />
+
+        <TextView
+            android:id="@+id/adp_orc_vlDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/adp_ped_percDesc"
+            app:layout_constraintTop_toBottomOf="@+id/adp_ped_txtComissao" />
+
+        <ImageView
+            android:id="@+id/adp_ped_indicador"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/fundo_bt_flutuante"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/etiqueta"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitStart"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/adp_ped_imagem" />
+
+        <View
+            android:id="@+id/adapter_itemOrc_strip"
+            android:layout_width="12dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:elevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/adapter_itemOrc_stripStar"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginTop="0dp"
+            android:visibility="gone"
+            android:elevation="9dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+<!--            app:srcCompat="@drawable/ic_img_selecao" />-->
+        
+        <TextView
+            android:id="@+id/adapter_itemOrc_stripLabel"
+            android:layout_width="50dp"
+            android:layout_height="0dp"
+            android:rotation="270"
+            android:text="SUGERIDO"
+            android:textColor="#000000"
+            android:textSize="7sp"
+            android:visibility="gone"
+            android:gravity="center"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ellipsize="none"
+            android:includeFontPadding="false"
+            android:elevation="12dp"
+            app:layout_constraintStart_toStartOf="@id/adapter_itemOrc_strip"
+            app:layout_constraintEnd_toEndOf="@id/adapter_itemOrc_strip"
+            app:layout_constraintTop_toTopOf="@id/adapter_itemOrc_strip"
+            app:layout_constraintBottom_toBottomOf="@id/adapter_itemOrc_strip" />
+        <TextView
+            android:id="@+id/AdapterItemOrcamento_PesoTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="0.00kg"
+            android:textColor="@color/secondary_text"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/AdateperItemOrcamento_ImagemPeso"
+            app:layout_constraintTop_toBottomOf="@id/adp_ped_txtDescricao" />
+
+        <ImageView
+            android:id="@+id/AdateperItemOrcamento_ImagemPeso"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:scaleType="centerInside"
+            app:layout_constraintStart_toEndOf="@id/adp_ped_txtBarcode"
+            app:layout_constraintTop_toBottomOf="@id/adp_ped_txtDescricao"
+            app:srcCompat="@drawable/ic_baseline_scale_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu_orcamento"
+            android:icon="@drawable/ic_nav_orcamento"
+            android:title="Orçamento" />
+        <item
+            android:id="@+id/nav_menu_clientes"
+            android:icon="@drawable/ic_nav_clientes"
+            android:title="Nossos Clientes" />
+        <item
+            android:id="@+id/nav_menu_cnpj"
+            android:icon="@drawable/ic_nav_cnpj"
+            android:title="Consultar Pedido" />
+        <item
+            android:id="@+id/nav_menu_entregas"
+            android:icon="@drawable/ic_nav_entregas"
+            android:title="Consultar entregas" />
+
+        <item
+            android:id="@+id/nav_menu_consultar"
+            android:icon="@drawable/ic_nav_barcode"
+            android:title="Consultar produto" />
+        <item
+            android:id="@+id/nav_menu_encomendas"
+            android:icon="@drawable/ic_adap_encomenda"
+            android:title="Consultar encomendas" />
+    </group>
+
+    <item
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Campanhas">
+        <menu
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <item
+                android:id="@+id/nav_menu_vendas"
+                android:icon="@drawable/ic_nav_viagemsonhos"
+                android:title="Viagem dos Sonhos" />
+        </menu>
+    </item>
+    <item android:title="Utilitários">
+        <menu>
+
+            <item
+                android:id="@+id/nav_menu_calculadora"
+                android:icon="@drawable/ic_nav_calculadora"
+                android:title="Calculadora de piso" />
+
+            <item
+                android:id="@+id/nav_menu_faq"
+                android:icon="@drawable/ic_nav_faq"
+                android:title="Sugestões e problemas" />
+
+        </menu>
+    </item>
+
+    <item android:title="Sistema">
+        <menu>
+            <item
+                android:id="@+id/nav_menu_registrar"
+                android:icon="@drawable/ic_menu_sair"
+                android:title="Registrar Aparelho" />
+            <item
+                android:id="@+id/nav_menu_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="Logout" />
+
+            <item
+                android:id="@+id/nav_menu_sair"
+                android:icon="@drawable/ic_menu_sair"
+                android:title="Sair" />
+
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <color name="primary">#240842</color>
+  <color name="primary_dark">#18042E</color>
+    <color name="accent">#8A18D1</color>
+  <color name="background">#F7F7FB</color>
+  <color name="surface">#FFFFFF</color>
+  <color name="text_primary">#212121</color>
+  <color name="text_secondary">#757575</color>
+  <color name="primary_text">#212121</color>
+  <color name="secondary_text">#757575</color>
+  <color name="icons">#FFFFFF</color>
+  <color name="divider">#E0E0E0</color>
+  <color name="ligthgrayline">#FCFCFC</color>
+  <color name="backgroudcolor">#FCFCFC</color>
+
+  <color name="deeppurple">#7c4dff</color>
+  <color name="yellow">#ffb300</color>
+  <color name="green">#00bfa5</color>
+  <color name="pink">#ff4081</color>
+  <color name="laranja">#C8671E</color>
+  <color name="roxo">#A61553</color>
+  <color name="roxotrans">#77A61553</color>
+  <color name="primary_dark_trans">#770000FF</color>
+  <color name="laranja_trans">#77ff8c00</color>
+  <color name="green_trans">#77006400</color>
+  <color name="pinktrans">#77ff4081</color>
+  <color name="roxoconceito">#ff00c0</color>
+
+  <color name="success">#2E7D32</color>
+  <color name="warning">#F9A825</color>
+  <color name="error">#D32F2F</color>
+
+</resources>

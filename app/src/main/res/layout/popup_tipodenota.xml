@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/pop_ped_tpnota_btnFechar"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:text="X"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/pop_ped_layoutTpNota"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_ped_tpnota_btnFechar">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pop_ped_edtTpnota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
+            android:drawableRight="@drawable/ic_btn_consultar"
+            android:focusable="false"
+            android:hint="Informe o Tipo de Nota"
+            android:maxLines="2"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/pop_ped_btn_iniciarr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/backgroudbuttom"
+        android:text="Iniciar o pedido"
+        android:textColor="@color/icons"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pop_ped_layoutTpNota" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

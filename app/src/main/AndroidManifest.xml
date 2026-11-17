@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.hardware.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <application
+        android:name=".FikonApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".MetasActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".EncomendasActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ConsultaFaturamentoLinhaActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".IndicadoresGestorActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".CupomActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".IndicadoresActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ValidacaoEstoqueActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".AgendamentoRetiraActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ConsultaEstoqueActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".CampanhaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".DevolucoesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ConsultaFaturamentoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".popup.PopupObsPedido"
+            android:theme="@style/AppTheme.Popup" />
+        <activity
+            android:name=".popup.PopupFinanceiro"
+            android:theme="@style/AppTheme.Popup" />
+        <activity
+            android:name=".popup.PopupAlterarEntrega"
+            android:theme="@style/AppTheme.Popup" />
+        <activity
+            android:name=".popup.PopupIndicadorSecundario"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupEnderecoEntrega"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupServicosAdicionais"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupInfoFreteServicos"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupRegistrarCelular"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupSenhaAcesso"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupCodigoMotor"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupAlterarContato"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupOrcCustomPF"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupConsultaCliente"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupCadastroContato"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".popup.PopupItemPed"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".popup.PopupItemOrcTodos"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".popup.PopupItemPedTodos"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".popup.PopupFormaPgto"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".popup.PopupTpNota"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupConsultor"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupValidarEstoque"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".popup.PopupVendaPerfeita"
+            android:theme="@style/AppTheme.PopupNoDimiss" />
+        <activity
+            android:name=".Pedidos_LancamentoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".PedidosActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".Orcamento_LancamentoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".OrcamentoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CalculadoraActivity"
+            android:label="Calculadora de piso"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ConsultaCnpjActivity"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeLogin"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeLogin">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GeralProdutoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ConsultaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".ConsultaEntregaActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SugestoesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ClientesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar" />
+        <activity
+            android:name=".ClientesCadastroActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.LegacyToolbar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".popup.PopupItemOrc"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupOrcFechamento"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupPedFechamento"
+            android:theme="@style/AppTheme.PopupNoDimiss"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupVerificaPromoFikon"
+            android:theme="@style/AppTheme.Popup" />
+        <activity
+            android:name=".popup.PopupInserirCupomPromocao"
+            android:theme="@style/AppTheme.Popup"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".popup.PopupConsultaOrcamento"
+            android:theme="@style/AppTheme.Popup" />
+        <activity
+            android:name=".popup.PopupConsultaProduto"
+            android:theme="@style/AppTheme.Popup"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupSugestaoProduto"
+            android:theme="@style/AppTheme.Popup"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupAmbienteProduto"
+            android:theme="@style/AppTheme.Popup"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupPlanSimulationCredz"
+            android:theme="@style/AppTheme.Popup"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".popup.PopupCodigoConsentimentoEncomenda"
+            android:theme="@style/AppTheme.Popup"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            tools:replace="screenOrientation" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

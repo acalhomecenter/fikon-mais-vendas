@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ligthgrayline"
+    android:orientation="vertical"
+    tools:context=".ConsultaActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/consulta_appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/consulta_status_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/consulta_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:id="@+id/btCamera"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_camera"
+        app:layout_constraintBottom_toTopOf="@+id/listaCosnsultaPorTexto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout12"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout12" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="35dp"
+        android:text="@string/textoConsulta"
+        android:textAlignment="center"
+        android:textSize="07pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consulta_appbar" />
+
+
+    <ImageView
+        android:id="@+id/consulta_carrinho"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_carrinho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consulta_appbar" />
+
+
+    <ImageView
+        android:id="@+id/consulta_notificacao"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_gravity="end"
+        android:scaleType="centerCrop"
+        android:src="@drawable/statuserro"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/consulta_carrinho"
+        app:layout_constraintTop_toTopOf="@+id/consulta_carrinho" />
+
+    <TextView
+        android:id="@+id/consulta_txtNotificacao"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="@color/icons"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/consulta_notificacao"
+        app:layout_constraintEnd_toEndOf="@+id/consulta_notificacao"
+        app:layout_constraintStart_toStartOf="@+id/consulta_notificacao"
+        app:layout_constraintTop_toTopOf="@+id/consulta_notificacao" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/btCamera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutEdtCodigo"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="30"
+                app:endIconMode="clear_text"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:id="@+id/edtCodigo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe código ou descrição"
+                    android:imeActionLabel="Consultar"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLength="30"
+                    android:singleLine="true"
+
+
+                    >
+
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaCosnsultaPorTexto"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout12"></androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatConsultaAvancada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:elevation="6dp"
+        android:paddingBottom="16dp"
+        android:backgroundTint="@color/primary"
+        android:tint="@color/icons"
+        app:layout_constraintBottom_toBottomOf="@+id/listaCosnsultaPorTexto"
+        app:layout_constraintEnd_toEndOf="@+id/listaCosnsultaPorTexto"
+        app:fabSize="mini"
+        app:srcCompat="@drawable/ic_filter_list_black_24dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/icons"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="6dp"
+    app:cardElevation="2dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/orc_adp_imgCarrinho"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/vtex"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_numorc" />
+
+    <ImageView
+        android:id="@+id/orc_adp_indicadorEsp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_adap_especif"
+        app:layout_constraintBottom_toTopOf="@+id/orc_adp_txtconsultor"
+        app:layout_constraintEnd_toStartOf="@+id/orc_adp_imgCarrinho"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/orc_adp_txtcpf"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_txtcliente" />
+
+    <TextView
+        android:id="@+id/orc_adp_numorc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Nº ORC.: 228350"
+        android:textColor="@color/primary_text"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/orc_adp_imgCacheSync"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_sync_cache"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/orc_adp_numorc"
+        app:layout_constraintStart_toEndOf="@+id/orc_adp_numorc"
+        app:layout_constraintTop_toTopOf="@+id/orc_adp_numorc" />
+
+    <TextView
+        android:id="@+id/orc_adp_txtcliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+
+        android:text="Jefferson Di Paulo Martins Almeida Arauj "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/orc_adp_imgCliente"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_numorc" />
+
+
+    <TextView
+        android:id="@+id/orc_adp_txtvalidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:text="Válidade: 19/02/2019"
+        android:textColor="@color/primary_text"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/orc_adp_indicador"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/orc_adp_numorc"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/orc_adp_txtcpf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Cpf: 672.081.773-68"
+        app:layout_constraintStart_toEndOf="@+id/orc_adp_imgCliente"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_txtcliente" />
+
+    <TextView
+        android:id="@+id/orc_adp_txttotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="R$ 1.000,00"
+        android:textColor="@color/primary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/orc_adp_txtconsultor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_txtmargem" />
+
+
+    <ImageView
+        android:id="@+id/orc_adp_indicador"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/fundo_bt_flutuante_orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/orc_adp_imgCliente"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_pessoam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_numorc" />
+
+
+    <TextView
+        android:id="@+id/orc_adp_txtmargem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Margem: 35,32%"
+        android:textColor="@color/primary"
+        app:layout_constraintStart_toEndOf="@+id/orc_adp_imgCliente"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_txtcpf" />
+
+    <TextView
+        android:id="@+id/orc_adp_txtconsultor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Consultor: Jefferson Di Paulo"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orc_adp_txtmargem" />
+
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

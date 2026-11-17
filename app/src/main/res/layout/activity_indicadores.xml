@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:fancy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndicadoresActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/ind_appbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/ind_status_bar_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/primary_dark" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ind_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_ontem"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ind_appbar"
+        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="#ffff"
+        fancy:fb_focusColor="#2196f3"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Ontem"
+        fancy:fb_textColor="#2196f3"
+        fancy:fb_textSize="12sp">
+
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_dia"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="top"
+        app:layout_constraintEnd_toStartOf="@+id/btn_ontem"
+        app:layout_constraintStart_toEndOf="@+id/btn_acumulado"
+        app:layout_constraintTop_toBottomOf="@id/ind_appbar"
+        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="#ffff"
+        fancy:fb_focusColor="#2196f3"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Dia"
+        fancy:fb_textColor="#2196f3"
+        fancy:fb_textSize="12sp">
+
+    </mehdi.sakout.fancybuttons.FancyButton>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_acumulado">
+
+    </FrameLayout>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/btn_acumulado"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:gravity="top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ind_appbar"
+        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderWidth="2dp"
+        fancy:fb_defaultColor="#ffff"
+        fancy:fb_focusColor="#2196f3"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Acumulado"
+        fancy:fb_textColor="#2196f3"
+        fancy:fb_textSize="12sp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

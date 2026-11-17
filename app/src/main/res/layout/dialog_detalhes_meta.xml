@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/txtVendas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vendas: R$ 0,00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#4472C4"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/txtDevolucoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Devoluções: R$ 0,00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FF0000"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/txtVendaLiquida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Venda Líquida: R$ 0,00"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:layout_marginBottom="16dp"/>
+        
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/txtDiasUteis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dias úteis no período: 0"
+        android:textSize="14sp"
+        android:textColor="#000000"/>
+
+</LinearLayout>

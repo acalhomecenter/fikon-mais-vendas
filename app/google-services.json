@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1014841205700",
+    "firebase_url": "https://acal-vendas-1538831640170.firebaseio.com",
+    "project_id": "acal-vendas-1538831640170",
+    "storage_bucket": "acal-vendas-1538831640170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014841205700:android:c2802123191fd262",
+        "android_client_info": {
+          "package_name": "br.com.acalfortaleza.fikonmais"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014841205700-g4g7gfmecn1jgc961u2vu72cvtb0ersv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.acalfortaleza.fikonmais",
+            "certificate_hash": "e61a5b0722b386240d127176cbf3ea93a1b53a3a"
+          }
+        },
+        {
+          "client_id": "1014841205700-qm64vdtsdimmvc5t68k71eev9od204nh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUERpCGjo_EZGQK716KhQ5NoqNjgHox60"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014841205700-qm64vdtsdimmvc5t68k71eev9od204nh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
