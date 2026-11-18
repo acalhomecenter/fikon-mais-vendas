@@ -157,7 +157,7 @@
                         android:text="R$ 0,00"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="#4472C4"/>
+                        android:textColor="@color/primary"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -181,7 +181,7 @@
                         android:text="0,00%"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        android:textColor="#4472C4"/>
+                        android:textColor="@color/primary"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -281,7 +281,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:text="Buscar"
-            android:backgroundTint="#4472C4"
+            android:backgroundTint="@color/table_header"
             android:textColor="#FFFFFF"
             android:layout_marginBottom="16dp"/>
 
@@ -350,7 +350,7 @@
                             android:padding="12dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#4472C4"/>
+                            android:background="@color/table_header"/>
                         <TextView
                             android:text="Meta"
                             android:textColor="#FFFFFF"
@@ -358,7 +358,7 @@
                             android:padding="12dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#4472C4"/>
+                            android:background="@color/table_header"/>
                         <TextView
                             android:text="Realizado"
                             android:textColor="#FFFFFF"
@@ -366,7 +366,7 @@
                             android:padding="12dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#4472C4"/>
+                            android:background="@color/table_header"/>
                         <TextView
                             android:text="Ganho"
                             android:textColor="#FFFFFF"
@@ -374,7 +374,7 @@
                             android:padding="12dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#4472C4"/>
+                            android:background="@color/table_header"/>
                     </TableRow>
 
                     <!-- Row 1 -->
@@ -385,7 +385,7 @@
                             android:padding="10dp"
                             android:gravity="center_vertical"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtMetaAvista"
                             android:text="45%"
@@ -393,7 +393,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtRealizadoAvista"
                             android:text="-"
@@ -401,7 +401,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtGanhoAvista"
                             android:text="-"
@@ -409,7 +409,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                     </TableRow>
 
                     <!-- Row 2 -->
@@ -420,7 +420,7 @@
                             android:padding="10dp"
                             android:gravity="center_vertical"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtMetaLinhas"
                             android:text="16"
@@ -428,7 +428,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtRealizadoLinhas"
                             android:text="-"
@@ -436,7 +436,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtGanhoLinhas"
                             android:text="-"
@@ -444,7 +444,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                     </TableRow>
 
                     <!-- Row 3 -->
@@ -455,7 +455,7 @@
                             android:padding="10dp"
                             android:gravity="center_vertical"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtMetaSku"
                             android:text="4"
@@ -463,7 +463,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtRealizadoSku"
                             android:text="-"
@@ -471,7 +471,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtGanhoSku"
                             android:text="R$ 200"
@@ -479,7 +479,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                     </TableRow>
 
                     <!-- Row 4 -->
@@ -490,7 +490,7 @@
                             android:padding="10dp"
                             android:gravity="center_vertical"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtMetaFrete"
                             android:text="80%"
@@ -498,7 +498,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtRealizadoFrete"
                             android:text="-"
@@ -506,7 +506,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtGanhoFrete"
                             android:text="-"
@@ -514,7 +514,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                     </TableRow>
 
                     <!-- Row 5 -->
@@ -525,7 +525,7 @@
                             android:padding="10dp"
                             android:gravity="center_vertical"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtMetaFaturamento"
                             android:text="-"
@@ -533,7 +533,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtRealizadoFaturamento"
                             android:text="-"
@@ -541,7 +541,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                         <TextView
                             android:id="@+id/txtGanhoFaturamento"
                             android:text="-"
@@ -549,7 +549,7 @@
                             android:padding="10dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#D9E1F2"/>
+                            android:background="@color/table_row"/>
                     </TableRow>
 
                 </TableLayout>
@@ -561,7 +561,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:text="Próximo"
-                android:backgroundTint="#4472C4"
+                android:backgroundTint="@color/table_header"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="16dp"/>
         </LinearLayout>
@@ -626,7 +626,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/cell_34_250k"
                             android:text="R$ 300,00"
@@ -635,7 +635,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/cell_34_300k"
                             android:text="R$ 600,00"
@@ -644,7 +644,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/lbl_row_34"
                             android:text="34%"
@@ -665,7 +665,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/cell_33_250k"
                             android:text="R$ 200,00"
@@ -674,7 +674,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/cell_33_300k"
                             android:text="R$ 300,00"
@@ -683,7 +683,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/lbl_row_33"
                             android:text="33%"
@@ -704,7 +704,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/cell_32_250k"
                             android:text="R$ 100,00"
@@ -713,7 +713,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/cell_32_300k"
                             android:text="R$ 200,00"
@@ -722,7 +722,7 @@
                             android:padding="20dp"
                             android:gravity="center"
                             android:layout_margin="1dp"
-                            android:background="#DDEBF7"/>
+                            android:background="@color/table_row_alt"/>
                         <TextView
                             android:id="@+id/lbl_row_32"
                             android:text="32%"
@@ -787,7 +787,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Voltar"
-                android:backgroundTint="#4472C4"
+                android:backgroundTint="@color/table_header"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="16dp"/>
         </LinearLayout>
@@ -837,7 +837,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dia Atual"
-                    android:textColor="#4472C4"
+                    android:textColor="@color/primary"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
@@ -914,7 +914,7 @@
                 android:layout_width="22dp"
                 android:layout_height="168dp"
                 android:layout_gravity="center_vertical"
-                android:background="#4472C4"
+                android:background="@color/table_header"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"

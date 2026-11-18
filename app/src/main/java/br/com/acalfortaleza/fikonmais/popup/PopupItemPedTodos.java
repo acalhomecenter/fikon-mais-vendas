@@ -363,7 +363,7 @@ public class PopupItemPedTodos extends Activity {
                             edtMotivo.setEnabled(true);
                             layout_Motivo.setEnabled(true);
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                                edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                             }
                         } else {
 
@@ -427,7 +427,7 @@ public class PopupItemPedTodos extends Activity {
                         edtFilTransf.setEnabled(true);
                         transfeSwitch.setEnabled(true);
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                            edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                         }
                     }
 
@@ -435,7 +435,7 @@ public class PopupItemPedTodos extends Activity {
                         edtFilTransf.setEnabled(true);
                         transfeSwitch.setEnabled(true);
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                            edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                         }
                     }
 
@@ -836,9 +836,9 @@ public class PopupItemPedTodos extends Activity {
                 edtFilTransf.setEnabled(true);
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    edtDataEntrega.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
-                    edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
-                    edtFilSaida.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                    edtDataEntrega.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
+                    edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
+                    edtFilSaida.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                 }
 
 
@@ -891,9 +891,9 @@ public class PopupItemPedTodos extends Activity {
                 itemPedido.setFilOrig("Pe.Cicero");
                 itemPedido.setCodFilOrig(5);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    edtDataEntrega.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
-                    edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
-                    edtFilSaida.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                    edtDataEntrega.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
+                    edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
+                    edtFilSaida.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                 }
 
                 if(encomendaSwitch.isChecked()) {
@@ -1083,7 +1083,7 @@ public class PopupItemPedTodos extends Activity {
                                     layout_Motivo.setEnabled(true);
                                     edtMotivo.setText(itemPedido.getMotivoDesc());
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                                        edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                                     }
                                     motivo_selecionado = "S";
                                 }
@@ -1238,9 +1238,9 @@ public class PopupItemPedTodos extends Activity {
             edtFilTransf.setEnabled(true);
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                edtDataEntrega.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
-                edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
-                edtFilSaida.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                edtDataEntrega.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
+                edtFilTransf.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
+                edtFilSaida.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
             }
 
             String dayp ="";

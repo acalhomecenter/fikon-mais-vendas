@@ -154,7 +154,7 @@ public class AvistaFragment extends Fragment {
         if(forma.getCodEve()==29){
             edtRecibo.setEnabled(true);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                edtRecibo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                edtRecibo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                 ConsultarCombobox(String.valueOf(pedido.getCliente().getCodcli()));
                 edtValor.setText(real.format(0.00d));
             }

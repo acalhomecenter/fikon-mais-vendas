@@ -984,7 +984,7 @@ public class MetasActivity extends BaseAcalActivity {
     }
 
     private void resetarCoresMatriz() {
-        int corPadrao = android.graphics.Color.parseColor("#DDEBF7");
+        int corPadrao = android.graphics.Color.parseColor("#F7F4FC");
         cell_34_200k.setBackgroundColor(corPadrao);
         cell_34_250k.setBackgroundColor(corPadrao);
         cell_34_300k.setBackgroundColor(corPadrao);

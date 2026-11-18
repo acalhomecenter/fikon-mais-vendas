@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-  <color name="primary">#240842</color>
-  <color name="primary_dark">#18042E</color>
-    <color name="accent">#8A18D1</color>
-  <color name="background">#F7F7FB</color>
+  <!--
+    Identidade visual (redesign 2026): violeta Fikon com neutros levemente frios.
+    Os nomes antigos foram mantidos para não alterar nenhum layout ou código.
+  -->
+
+  <!-- Marca -->
+  <color name="primary">#3A1470</color>
+  <color name="primary_dark">#24094A</color>
+  <color name="accent">#8A18D1</color>
+  <color name="primary_soft">#F1EAFB</color>
+  <color name="primary_outline">#D9C9F2</color>
+
+  <!-- Superfícies -->
+  <color name="background">#F5F4F9</color>
   <color name="surface">#FFFFFF</color>
-  <color name="text_primary">#212121</color>
-  <color name="text_secondary">#757575</color>
-  <color name="primary_text">#212121</color>
-  <color name="secondary_text">#757575</color>
+  <color name="ligthgrayline">#F5F4F9</color>
+  <color name="backgroudcolor">#F5F4F9</color>
+
+  <!-- Texto -->
+  <color name="text_primary">#1E1A2B</color>
+  <color name="text_secondary">#6B6680</color>
+  <color name="primary_text">#1E1A2B</color>
+  <color name="secondary_text">#6B6680</color>
+  <color name="text_disabled">#A9A5B8</color>
+
   <color name="icons">#FFFFFF</color>
-  <color name="divider">#E0E0E0</color>
-  <color name="ligthgrayline">#FCFCFC</color>
-  <color name="backgroudcolor">#FCFCFC</color>
+  <color name="divider">#E6E3EE</color>
+
+  <!-- Tabelas (antes azuis no estilo planilha) -->
+  <color name="table_header">#3A1470</color>
+  <color name="table_row">#EFEAF8</color>
+  <color name="table_row_alt">#F7F4FC</color>
 
   <color name="deeppurple">#7c4dff</color>
   <color name="yellow">#ffb300</color>

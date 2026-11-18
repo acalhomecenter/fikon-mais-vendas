@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        getWindow().setStatusBarColor(Color.BLACK);
+        getWindow().setStatusBarColor(androidx.core.content.ContextCompat.getColor(this, R.color.primary_dark));
         dao = new UsuarioDao(LoginActivity.this);
         handler = new Handler();
 
@@ -69,6 +69,9 @@ public class LoginActivity extends AppCompatActivity {
         edtBase.setText(BASE_URL_FIKON);
         edtBase.setEnabled(false);
         edtBase.setKeyListener(null);
+        // O campo da base fica oculto; o ambiente aparece só como selo no canto da tela.
+        findViewById(R.id.edtBaseLayout).setVisibility(View.GONE);
+        exibirSeloAmbiente(BASE_URL_FIKON);
 
         edtLogin = findViewById(R.id.edtLogin);
         edtSenha = findViewById(R.id.edtSenha);
@@ -101,8 +104,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         logo = findViewById(R.id.logo);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logoapp_branca);
-        logo.setImageBitmap(bitmap);
+        // Logo atual da Fikon (vetor); versão clara para o fundo escuro do login.
+        logo.setImageResource(R.drawable.logo_fikon_branca);
 
         esqueciSenha = findViewById(R.id.esqueciSenha);
         esqueciSenha.setOnClickListener(new View.OnClickListener() {
@@ -262,6 +265,23 @@ public class LoginActivity extends AppCompatActivity {
                 }.start();
             }
         });
+    }
+
+    /** Selo no canto inferior direito: "D" para dacal, "P" para acal (produção). */
+    private void exibirSeloAmbiente(String baseUrl) {
+        TextView selo = findViewById(R.id.txtAmbiente);
+        if (selo == null) {
+            return;
+        }
+        String host = android.net.Uri.parse(baseUrl == null ? "" : baseUrl.trim()).getHost();
+        String letra = null;
+        if ("dacal.fikon.com.br".equalsIgnoreCase(host)) {
+            letra = "D";
+        } else if ("acal.fikon.com.br".equalsIgnoreCase(host)) {
+            letra = "P";
+        }
+        selo.setText(letra == null ? "" : letra);
+        selo.setVisibility(letra == null ? View.GONE : View.VISIBLE);
     }
 
     private void solicitarBiometria() {

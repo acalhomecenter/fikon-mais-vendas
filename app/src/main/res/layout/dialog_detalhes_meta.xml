@@ -12,7 +12,7 @@
         android:text="Vendas: R$ 0,00"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#4472C4"
+        android:textColor="@color/primary"
         android:layout_marginBottom="8dp"/>
 
     <TextView

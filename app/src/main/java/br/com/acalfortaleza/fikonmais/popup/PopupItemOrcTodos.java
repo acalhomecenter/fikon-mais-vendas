@@ -161,7 +161,7 @@ public class PopupItemOrcTodos extends Activity {
                             edtMotivo.setEnabled(true);
                             layout_Motivo.setEnabled(true);
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                                edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                             }
                         }else{
                             edtMotivo.setEnabled(false);

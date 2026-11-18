@@ -11,9 +11,10 @@
         android:id="@+id/logoSplash"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:scaleType="fitXY"
+        android:layout_width="260dp"
+        android:layout_height="74dp"
+        android:contentDescription="Fikon"
+        android:scaleType="fitCenter"
         />
 
 </RelativeLayout>

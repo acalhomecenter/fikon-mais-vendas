@@ -41,8 +41,8 @@ public class SplashActivity extends AppCompatActivity implements Runnable {
         handler = new Handler();
 
         ImageView logo = findViewById(R.id.logoSplash);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.logoprincipal);
-        logo.setImageBitmap(bitmap);
+        // Logo atual da Fikon (vetor); versão clara para o fundo escuro da abertura.
+        logo.setImageResource(R.drawable.logo_fikon_branca);
 
         handler.postDelayed(this, 1000);
     }

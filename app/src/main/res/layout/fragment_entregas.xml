@@ -35,13 +35,13 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_entregaatraso"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textoEntrega"
-        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderColor="#8A18D1"
         fancy:fb_borderWidth="2dp"
         fancy:fb_defaultColor="#ffff"
-        fancy:fb_focusColor="#2196f3"
+        fancy:fb_focusColor="#8A18D1"
         fancy:fb_radius="30dp"
         fancy:fb_text="Entregas do dia"
-        fancy:fb_textColor="#2196f3"
+        fancy:fb_textColor="#8A18D1"
         fancy:fb_textSize="12sp" />
 
     <mehdi.sakout.fancybuttons.FancyButton
@@ -58,13 +58,13 @@
         app:layout_constraintStart_toEndOf="@+id/btn_entregadia"
         app:layout_constraintTop_toBottomOf="@+id/textoEntrega"
         app:layout_constraintVertical_bias="0.0"
-        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderColor="#8A18D1"
         fancy:fb_borderWidth="2dp"
         fancy:fb_defaultColor="#ffff"
-        fancy:fb_focusColor="#2196f3"
+        fancy:fb_focusColor="#8A18D1"
         fancy:fb_radius="30dp"
         fancy:fb_text="Entregas do mês"
-        fancy:fb_textColor="#2196f3"
+        fancy:fb_textColor="#8A18D1"
         fancy:fb_textSize="12sp" />
 
     <ListView

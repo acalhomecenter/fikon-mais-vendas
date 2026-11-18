@@ -152,14 +152,14 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
-                fancy:fb_borderColor="#2196f3"
+                fancy:fb_borderColor="#8A18D1"
                 fancy:fb_borderWidth="2dp"
                 fancy:fb_defaultColor="#FFFFFF"
-                fancy:fb_focusColor="#1976D2"
+                fancy:fb_focusColor="#8A18D1"
                 fancy:fb_radius="30dp"
                 fancy:fb_text="CALCULAR"
                 fancy:fb_textSize="10sp"
-                fancy:fb_textColor="#2196f3"
+                fancy:fb_textColor="#8A18D1"
                 />
 
 

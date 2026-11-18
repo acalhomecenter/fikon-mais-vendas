@@ -247,7 +247,7 @@ public class PopupItemOrc extends Activity {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            edtPrevisaoEncomenda.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+            edtPrevisaoEncomenda.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
         }
 
         if(itemOrcamento.getSituacao()!=null && !itemOrcamento.getSituacao().equals("EN")){
@@ -313,7 +313,7 @@ public class PopupItemOrc extends Activity {
                               edtMotivo.setEnabled(true);
                               layout_Motivo.setEnabled(true);
                               if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                  edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                                  edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                               }
                           }else{
                               calculaPercentual();
@@ -351,7 +351,7 @@ public class PopupItemOrc extends Activity {
                             layout_Motivo.setEnabled(true);
 
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                                edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                             }
                         } else {
                             edtMotivo.setEnabled(false);
@@ -661,7 +661,7 @@ public class PopupItemOrc extends Activity {
                                     layout_Motivo.setEnabled(true);
                                     edtMotivo.setText(itemOrcamento.getMotivoDesc());
                                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                        edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#1C8BF1")));
+                                        edtMotivo.setCompoundDrawableTintList(ColorStateList.valueOf(Color.parseColor("#8A18D1")));
                                     }
                                     motivo_selecionado = "S";
                                 }

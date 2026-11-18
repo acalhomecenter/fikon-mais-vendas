@@ -45,13 +45,13 @@
         android:gravity="top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ind_gestor_appbar"
-        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderColor="#8A18D1"
         fancy:fb_borderWidth="2dp"
         fancy:fb_defaultColor="#ffff"
-        fancy:fb_focusColor="#2196f3"
+        fancy:fb_focusColor="#8A18D1"
         fancy:fb_radius="30dp"
         fancy:fb_text="Ontem"
-        fancy:fb_textColor="#2196f3"
+        fancy:fb_textColor="#8A18D1"
         fancy:fb_textSize="12sp">
 
     </mehdi.sakout.fancybuttons.FancyButton>
@@ -68,13 +68,13 @@
         app:layout_constraintEnd_toStartOf="@+id/btn_ontem"
         app:layout_constraintStart_toEndOf="@+id/btn_acumulado"
         app:layout_constraintTop_toBottomOf="@id/ind_gestor_appbar"
-        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderColor="#8A18D1"
         fancy:fb_borderWidth="2dp"
         fancy:fb_defaultColor="#ffff"
-        fancy:fb_focusColor="#2196f3"
+        fancy:fb_focusColor="#8A18D1"
         fancy:fb_radius="30dp"
         fancy:fb_text="Dia"
-        fancy:fb_textColor="#2196f3"
+        fancy:fb_textColor="#8A18D1"
         fancy:fb_textSize="12sp">
 
     </mehdi.sakout.fancybuttons.FancyButton>
@@ -104,13 +104,13 @@
         android:gravity="top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ind_gestor_appbar"
-        fancy:fb_borderColor="#2196f3"
+        fancy:fb_borderColor="#8A18D1"
         fancy:fb_borderWidth="2dp"
         fancy:fb_defaultColor="#ffff"
-        fancy:fb_focusColor="#2196f3"
+        fancy:fb_focusColor="#8A18D1"
         fancy:fb_radius="30dp"
         fancy:fb_text="Acumulado"
-        fancy:fb_textColor="#2196f3"
+        fancy:fb_textColor="#8A18D1"
         fancy:fb_textSize="12sp" />
 
 

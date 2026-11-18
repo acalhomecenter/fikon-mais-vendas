@@ -17,6 +17,14 @@ public final class BiometricAuthHelper {
         void onFailure();
     }
 
+    /**
+     * Digital (classe 3) ou reconhecimento facial (a maioria dos aparelhos registra o rosto
+     * como classe 2, "fraca"). As credenciais não dependem de chave criptográfica presa à
+     * biometria, então a classe 2 é suficiente para destravar o login salvo.
+     */
+    private static final int AUTENTICADORES = BiometricManager.Authenticators.BIOMETRIC_STRONG
+            | BiometricManager.Authenticators.BIOMETRIC_WEAK;
+
     private BiometricAuthHelper() {
     }
 
@@ -26,7 +34,7 @@ public final class BiometricAuthHelper {
         }
 
         return BiometricManager.from(context)
-                .canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_STRONG)
+                .canAuthenticate(AUTENTICADORES)
                 == BiometricManager.BIOMETRIC_SUCCESS;
     }
 
@@ -47,7 +55,9 @@ public final class BiometricAuthHelper {
 
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Acesso do Fikon")
-                .setSubtitle("Use sua digital para entrar no Fikon")
+                .setSubtitle("Use sua digital ou reconhecimento facial para entrar")
+                .setAllowedAuthenticators(AUTENTICADORES)
+                .setConfirmationRequired(false)
                 .setNegativeButtonText("Usar senha")
                 .build();
 
