@@ -4443,6 +4443,10 @@ public class PopupPedFechamento extends Activity implements ConsultaEstoqueInter
         if (pedidoSave == null || pedidoSave.getNumpedven() <= 0 || identificadorReservaCupom <= 0) {
             return "Pedido ou identificador da reserva do cupom inválido.";
         }
+        if (FikonVendasClient.ativo()) {
+            // Venda fechada: confirma o uso do cupom reservado em preco/cupom.
+            return FikonVendasClient.confirmarCupom(identificadorReservaCupom);
+        }
         try {
             br.com.acalfortaleza.fikonmais.models.CupomPedidoRequest request =
                     new br.com.acalfortaleza.fikonmais.models.CupomPedidoRequest();
@@ -4490,6 +4494,12 @@ public class PopupPedFechamento extends Activity implements ConsultaEstoqueInter
                 return "Identificador da reserva do cupom inválido.";
             }
             return registrarCupomPedido(pedidoSave);
+        }
+
+        if (FikonVendasClient.ativo()) {
+            // A Fikon não tem rota para cancelar uma reserva de cupom: sem desconto de
+            // cupom no pedido, não há o que confirmar nem remover.
+            return null;
         }
 
         try {

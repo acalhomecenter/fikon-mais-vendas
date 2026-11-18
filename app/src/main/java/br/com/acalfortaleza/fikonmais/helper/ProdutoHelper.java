@@ -45,7 +45,6 @@ public class ProdutoHelper {
     private Context context;
     private Retrofit retrofit;
     private Retrofit retrofitVtex;
-    private Retrofit retrofitPromocao;
     private OkHttpClient client;
     private List<ProdutoGemco> mListGemco;
 
@@ -73,11 +72,6 @@ public class ProdutoHelper {
                .build();
        retrofitVtex = new Retrofit.Builder()
                .baseUrl(ApiVtex.BASE_URL)
-               .client(client)
-               .addConverterFactory(GsonConverterFactory.create())
-               .build();
-       retrofitPromocao = new Retrofit.Builder()
-               .baseUrl(ApiGemco.PROMO_BASE_URL)
                .client(client)
                .addConverterFactory(GsonConverterFactory.create())
                .build();
@@ -346,8 +340,7 @@ public class ProdutoHelper {
         }
 
         try {
-            final ApiGemco service = retrofitPromocao.create(ApiGemco.class);
-            final Call<PromocaoPrecoResponse> request = service.consultarPrecosPromocionais(itens, "Bearer " + ApiGemco.PROMO_TOKEN);
+            final Call<PromocaoPrecoResponse> request = FikonVendasClient.consultarPromocoes(itens);
 
             Log.d("PromocaoPrecoDebug", "POST promocao iniciado | codfil=" + codfil
                     + " | estabelecimento=" + estabelecimento
@@ -426,13 +419,9 @@ public class ProdutoHelper {
         ));
 
         try {
-            final ApiGemco service = retrofitPromocao.create(ApiGemco.class);
 
             final Call<PromocaoPrecoResponse> request =
-                    service.consultarPrecosPromocionais(
-                            itens,
-                            "Bearer " + ApiGemco.PROMO_TOKEN
-                    );
+                    FikonVendasClient.consultarPromocoes(itens);
 
             Log.d("PromocaoPrecoDebug",
                     "POST promocao produto iniciado | codfil=" + codfil
@@ -495,7 +484,6 @@ public class ProdutoHelper {
             return promocoesEncontradas;
         }
 
-        final ApiGemco service = retrofitPromocao.create(ApiGemco.class);
 
         for (int i = 0; i < itensPedido.size(); i++) {
             ItemPedidos item = itensPedido.get(i);
@@ -514,7 +502,7 @@ public class ProdutoHelper {
                         + " | posicaoItem=" + posicaoItem
                         + " | estabelecimento=" + estabelecimento);
 
-                Call<PromocaoPrecoResponse> request = service.consultarPrecosPromocionais(itensRequest, "Bearer " + ApiGemco.PROMO_TOKEN);
+                Call<PromocaoPrecoResponse> request = FikonVendasClient.consultarPromocoes(itensRequest);
                 Response<PromocaoPrecoResponse> response = request.execute();
                 PromocaoPrecoResponse body = response.body();
 
@@ -595,6 +583,14 @@ public class ProdutoHelper {
     }
 
     private Integer resolverEstabelecimentoPromocional(String codfil) {
+        if (FikonVendasClient.ativo()) {
+            // Na sessão Fikon a loja já vem do login (chaveestabelecimento).
+            Integer estabelecimento = FikonVendasClient.estabelecimentoDaSessao();
+            if (estabelecimento == null) {
+                Log.w("PromocaoPrecoDebug", "Sessão Fikon sem loja: POST promocional não será executado");
+            }
+            return estabelecimento;
+        }
         int filialGenco = 0;
 
         try {

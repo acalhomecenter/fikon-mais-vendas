@@ -221,6 +221,83 @@ public final class FikonVendasClient {
         }
     }
 
+    // ---------- Preço promocional e cupom ----------
+
+    /**
+     * Chamada de POST preco/promocao com a base e o token da sessão Fikon.
+     * Cada item precisa de codigo e estabelecimento (chave da loja).
+     */
+    public static retrofit2.Call<br.com.acalfortaleza.fikonmais.models.PromocaoPrecoResponse>
+            consultarPromocoes(List<br.com.acalfortaleza.fikonmais.models.PromocaoPrecoRequest> itens)
+            throws IOException {
+        Context context = FikonApp.context();
+        String authorization = context == null ? null : FikonApiClient.authorization(context);
+        if (authorization == null) {
+            throw new IOException("Sessão Fikon expirada. Faça login novamente.");
+        }
+        return FikonApiClient.api(context).consultarPromocoes(itens, authorization);
+    }
+
+    /** Chamada de POST preco/cupom (valida, calcula e reserva) com a sessão Fikon. */
+    public static retrofit2.Call<br.com.acalfortaleza.fikonmais.models.CupomPromocionalResponse>
+            aplicarCupom(br.com.acalfortaleza.fikonmais.models.CupomPromocionalRequest request)
+            throws IOException {
+        Context context = FikonApp.context();
+        String authorization = context == null ? null : FikonApiClient.authorization(context);
+        if (authorization == null) {
+            throw new IOException("Sessão Fikon expirada. Faça login novamente.");
+        }
+        return FikonApiClient.api(context).aplicarCupom(request, authorization);
+    }
+
+    /** Chave da loja da sessão Fikon, ou null. */
+    public static Integer estabelecimentoDaSessao() {
+        Context context = FikonApp.context();
+        return context == null ? null : chaveEstabelecimento(context);
+    }
+
+    /** Código do cliente para "pessoa" no cupom (código Fikon; sem ele, CPF/CNPJ). */
+    public static String codigoPessoa(Cliente cliente) {
+        return FikonApiClient.codigoClienteFikon(cliente);
+    }
+
+    /**
+     * Confirma o uso do cupom reservado (POST preco/cupom/confirmar). Reserva já confirmada
+     * conta como sucesso, para o "Tentar novamente" do app não falhar.
+     *
+     * @return null em caso de sucesso, ou a mensagem de erro
+     */
+    public static String confirmarCupom(long identificadorReserva) {
+        if (identificadorReserva <= 0) {
+            return "Identificador da reserva do cupom inválido.";
+        }
+        Context context = FikonApp.context();
+        String authorization = context == null ? null : FikonApiClient.authorization(context);
+        if (authorization == null) {
+            return "Sessão Fikon expirada. Faça login novamente.";
+        }
+        JsonObject body = new JsonObject();
+        body.addProperty("identificadorReserva", identificadorReserva);
+        try {
+            Response<JsonObject> response = FikonApiClient.api(context)
+                    .confirmarCupom(body, authorization).execute();
+            if (response.isSuccessful()) {
+                return null;
+            }
+            String mensagem = FikonApiClient.errorMessage(response, null);
+            if (mensagem != null && mensagem.contains("já possui confirmação")) {
+                return null;
+            }
+            Log.e(TAG, "confirmar cupom HTTP " + response.code() + ": " + mensagem);
+            return FikonApiClient.isBlank(mensagem)
+                    ? "A Fikon retornou HTTP " + response.code() + " ao confirmar o cupom."
+                    : mensagem;
+        } catch (IOException e) {
+            Log.e(TAG, "Fikon coupon confirm request failed", e);
+            return "Falha de comunicação ao confirmar o cupom.";
+        }
+    }
+
     // ---------- Condições de pagamento ----------
 
     private static final Map<String, FikonCondicao> CONDICOES = new HashMap<>();

@@ -14,7 +14,12 @@ import br.com.acalfortaleza.fikonmais.models.fikon.FikonProdutoResponse;
 import br.com.acalfortaleza.fikonmais.models.fikon.UsuarioResponse;
 import br.com.acalfortaleza.fikonmais.models.fikon.FikonChaveRequest;
 import br.com.acalfortaleza.fikonmais.models.fikon.FikonDocumentoRequest;
+import br.com.acalfortaleza.fikonmais.models.CupomPromocionalRequest;
+import br.com.acalfortaleza.fikonmais.models.CupomPromocionalResponse;
+import br.com.acalfortaleza.fikonmais.models.PromocaoPrecoRequest;
+import br.com.acalfortaleza.fikonmais.models.PromocaoPrecoResponse;
 import com.google.gson.JsonObject;
+import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -71,6 +76,26 @@ public interface ApiFikon {
     @POST("/api-app/v1/recurso/pesquisar")
     Call<FikonProdutoResponse> consultarProdutosPorFiltro(
             @Body FikonFiltroBuscaRequest filtro,
+            @Header("Authorization") String authorization);
+
+    // ---------- Preço e cupom ----------
+
+    /** Resposta sem envelope: { codigoPromocao, descontoValorTotal, produtos, ... }. */
+    @POST("/api-app/v1/preco/promocao")
+    Call<PromocaoPrecoResponse> consultarPromocoes(
+            @Body List<PromocaoPrecoRequest> itens,
+            @Header("Authorization") String authorization);
+
+    /** Cupom inválido volta 200 com dados.identificadorReserva = null. */
+    @POST("/api-app/v1/preco/cupom")
+    Call<CupomPromocionalResponse> aplicarCupom(
+            @Body CupomPromocionalRequest cupom,
+            @Header("Authorization") String authorization);
+
+    /** Corpo { identificadorReserva }; já confirmado volta 400. */
+    @POST("/api-app/v1/preco/cupom/confirmar")
+    Call<JsonObject> confirmarCupom(
+            @Body JsonObject reserva,
             @Header("Authorization") String authorization);
 
     // ---------- Orçamentos e pedidos (respostas em { data }, objeto ou lista) ----------

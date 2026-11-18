@@ -17,6 +17,10 @@ public class CupomPromocionalResponse {
         public Cupom cupom;
         @SerializedName("identificadorReserva")
         public int identificadorReserva;
+
+        /** Motivo quando o cupom não foi aplicado (identificadorReserva vem null). */
+        @SerializedName("mensagem")
+        public String mensagem;
         @SerializedName("descontosAplicados")
         public List<DescontoAplicado> descontosAplicados;
     }

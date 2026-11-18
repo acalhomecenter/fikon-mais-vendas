@@ -97,21 +97,17 @@ public interface ApiGemco {
     //Producao - Api
 
       static final String BASE_URL = "http://api.acalhomecenter.com.br:8086/ApiAcal/";
-      static final String PROMO_BASE_URL = "https://acal.fikon.com.br";
 
     //Homologacao - Api
       //  public static final String BASE_URL = "http://apihomol.acalhomecenter.com.br:8087/ApiAcal/";
-     // static final String PROMO_BASE_URL = "https://dacal.fikon.com.br";
 
 
     //Producao - Token
 
         public static final String token = "mO1zXrxpsNesVkiSACigxRBLEdWMccu_-4zjZNuVWLQNJGntPzd_KRGN4Wfh27WB6WV07kuz11WJGiCft64Q_lNO2PTAS_tS3t2_g77uKsoCqBVSBAeNPUbrp8RhQjsEmJi5H8nuOenz8MvGfOhPq4U8hn8-O6nv5YXoCQhxBRC_sD12ehCTOAuesk5lVQdqIpy86ovau1vrxQnQiTbp0Visu007duMWrYmOq2raIIQ";
-      public static final String PROMO_TOKEN = "01nwXhX8CgJwGhwHTNb7dlX8Jzs54pwD60FZqRGBWm5rSAEzGvoumP4vcc*k2v*NHu";
 
      // Homologacao - Token
       //public static final String token =  "oc0KOwHua_G_L7WWOp6VAkyZOESlFbUauiI1pnQnplhP26N4uqs_jLTSFdyrQ3eLt6i5NbmshNUPJZxgU25x_rvP7ETBdb-jp2SO4XUew4SuU5JMyEpbFpuJIVQjBfy5lp5OWWzrgSENRKFs2YDrN9RFiQs0uQfQcoV6wLz-8YPKrVDa4PR2j-6nwBZr5daGnXgpNK4jDB5PUuZ_l6_XvX9o1-at_61gdy8rLDY2oWI";
-     // public static final String PROMO_TOKEN = "019i5zNyUUiR*BNbxwV_HhcSVrfOTZL0goKxlvNekeW3SP_XmoG*YuGV7XW21Evm3Y";
 
     @GET("api/v1/Produtos")
     Call<List<ProdutoGemco>> listProdutoGemco(@Query("tipo") String tipo,@Query("valor") String valor, @Query("codFilPreco") String codFilPreco, @Header("Authorization") String auth);
@@ -124,12 +120,6 @@ public interface ApiGemco {
 
     @GET("api/v1/Produtos/FilialFikon")
     Call<FilialFikonGenco> consultarFilialFikon(@Query("codfil") int codfil, @Header("Authorization") String auth);
-
-    @POST("api-acal/api/v1/preco/promocao")
-    Call<PromocaoPrecoResponse> consultarPrecosPromocionais(@Body List<PromocaoPrecoRequest> itens, @Header("Authorization") String auth);
-
-    @POST("api-app/v1/preco/cupom")
-    Call<CupomPromocionalResponse> aplicarCupomPromocional(@Body CupomPromocionalRequest request, @Header("Authorization") String auth);
 
     @GET("api/v1/Produtos")
     Call<List<ProdutoDetalhe>> listProdutoDetalhados(@Header("Authorization") String auth);

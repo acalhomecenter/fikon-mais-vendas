@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Locale;
 
 import br.com.acalfortaleza.fikonmais.R;
+import br.com.acalfortaleza.fikonmais.helper.FikonVendasClient;
 import br.com.acalfortaleza.fikonmais.helper.ProdutoHelper;
 import br.com.acalfortaleza.fikonmais.models.CupomPromocionalRequest;
 import br.com.acalfortaleza.fikonmais.models.CupomPromocionalResponse;
@@ -107,7 +108,8 @@ public class PopupInserirCupomPromocao extends Activity {
                 }
 
                 boolean cupomJaUtilizado = false;
-                try {
+                // Na Fikon o limite de uso é conferido pela própria reserva do cupom.
+                if (!FikonVendasClient.ativo()) try {
                     Retrofit retrofitApiGemco = new Retrofit.Builder()
                             .baseUrl(ApiGemco.BASE_URL)
                             .addConverterFactory(GsonConverterFactory.create())
@@ -140,18 +142,11 @@ public class PopupInserirCupomPromocao extends Activity {
 
                 CupomPromocionalRequest request = criarRequisicao(codigoCupom);
                 Gson gsonComNulos = new GsonBuilder().serializeNulls().create();
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(ApiGemco.PROMO_BASE_URL.endsWith("/")
-                                ? ApiGemco.PROMO_BASE_URL
-                                : ApiGemco.PROMO_BASE_URL + "/")
-                        .addConverterFactory(GsonConverterFactory.create(gsonComNulos))
-                        .build();
                 android.util.Log.d(
                         "CupomPromocional",
-                        "POST preco/cupom request (sem Authorization): " + gsonComNulos.toJson(request));
-                Response<CupomPromocionalResponse> response = retrofit.create(ApiGemco.class)
-                        .aplicarCupomPromocional(request, "Bearer " + ApiGemco.PROMO_TOKEN)
-                        .execute();
+                        "POST preco/cupom request: " + gsonComNulos.toJson(request));
+                Response<CupomPromocionalResponse> response =
+                        FikonVendasClient.aplicarCupom(request).execute();
                 if (response.body() != null) {
                     cupomResponse = response.body();
                     android.util.Log.d(
@@ -181,7 +176,11 @@ public class PopupInserirCupomPromocao extends Activity {
                 } else if (cupomResponse.dados.cupom == null
                         || cupomResponse.dados.cupom.codigo == null
                         || cupomResponse.dados.identificadorReserva <= 0) {
-                    erro = "A resposta do serviço não contém os dados necessários para registrar o cupom.";
+                    // Cupom sem promoção volta 200 com identificadorReserva null e o motivo
+                    // em dados.mensagem.
+                    erro = cupomResponse.dados.mensagem != null && !cupomResponse.dados.mensagem.trim().isEmpty()
+                            ? cupomResponse.dados.mensagem
+                            : "O cupom não foi aplicado. Verifique o código e tente novamente.";
                 } else {
                     BigDecimal descontoTotal = aplicarDescontos(cupomResponse.dados.descontosAplicados);
                     cupomAplicado = descontoTotal.signum() > 0;
@@ -254,14 +253,19 @@ public class PopupInserirCupomPromocao extends Activity {
     }
 
     private CupomPromocionalRequest criarRequisicao(String codigoCupom) {
-        Integer estabelecimento = new ProdutoHelper().resolverEstabelecimentoPedido(pedido.getCodfil());
+        Integer estabelecimento = FikonVendasClient.ativo()
+                ? FikonVendasClient.estabelecimentoDaSessao()
+                : new ProdutoHelper().resolverEstabelecimentoPedido(pedido.getCodfil());
         if (estabelecimento == null || estabelecimento <= 0) {
             throw new IllegalStateException("Estabelecimento promocional não encontrado.");
         }
 
         CupomPromocionalRequest request = new CupomPromocionalRequest();
         request.cupom = codigoCupom;
-        request.pessoa = "C" + pedido.getCliente().getCodcli();
+        // "pessoa" é o código do cliente na Fikon; código inexistente volta 400.
+        request.pessoa = FikonVendasClient.ativo()
+                ? FikonVendasClient.codigoPessoa(pedido.getCliente())
+                : "C" + pedido.getCliente().getCodcli();
         request.chcriacao = null;
         request.estabelecimento = estabelecimento;
         request.itens = new ArrayList<>();
