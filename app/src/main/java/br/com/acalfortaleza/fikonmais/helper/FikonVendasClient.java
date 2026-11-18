@@ -95,7 +95,18 @@ public final class FikonVendasClient {
         if (body.itens.isEmpty()) {
             return falha("Inclua ao menos um item no orçamento.");
         }
-        body.frete = orcamento.getVlFrete() > 0 ? orcamento.getVlFrete() : null;
+        // O fechamento do orçamento já grava VlFrete = frete base + serviços adicionais
+        // (a Fikon não tem campo próprio para os serviços).
+        double frete = arredondar(Math.max(0d, orcamento.getVlFrete()));
+        body.frete = frete > 0 ? frete : null;
+        // Condição escolhida no orçamento: fica guardada na Fikon e vira a negociação
+        // quando o pedido for gravado. No editar, sem pagamentos e com itens alterados,
+        // a Fikon descarta as condições guardadas; por isso vão sempre que houver.
+        FikonPagamento pagamento = toPagamentoOrcamento(orcamento, body.itens, frete);
+        if (pagamento != null) {
+            body.pagamentos = new ArrayList<>();
+            body.pagamentos.add(pagamento);
+        }
 
         try {
             ApiFikon api = FikonApiClient.api(context);
@@ -112,6 +123,11 @@ public final class FikonVendasClient {
                 body.cliente = cliente;
                 body.vendedor = codigoVendedor(context);
                 body.chaveEstabelecimento = chaveEstabelecimento(context);
+                if (body.chaveEstabelecimento == null) {
+                    // O orçamento exige a loja; ela vem do vínculo do usuário no login.
+                    return falha("Seu usuário não tem loja vinculada na Fikon "
+                            + "(chaveestabelecimento vazio no login).");
+                }
                 Date agora = new Date();
                 body.emissao = new SimpleDateFormat("yyyy-MM-dd", Locale.ROOT).format(agora);
                 body.emissaohora = new SimpleDateFormat("HH:mm:ss", Locale.ROOT).format(agora);
@@ -678,6 +694,34 @@ public final class FikonVendasClient {
             result.add(target);
         }
         return result;
+    }
+
+    /**
+     * Pagamento único com a condição Fikon escolhida no orçamento (Condpgto = chave).
+     * O valor é o total que a Fikon vai calcular: itens (unitário × quantidade, já com
+     * o desconto) + frete. Condição que não é da Fikon (ex.: "01" do sistema antigo) não vai.
+     */
+    private static FikonPagamento toPagamentoOrcamento(Orcamento orcamento,
+                                                       List<FikonDocumentoRequest.Item> itens,
+                                                       double frete) {
+        CondPagamento cond = orcamento.getCondPagamento();
+        FikonCondicao condicao = cond == null ? null : condicao(cond.getCondpgto());
+        if (condicao == null) {
+            return null;
+        }
+        double total = frete;
+        for (FikonDocumentoRequest.Item item : itens) {
+            total += arredondar((item.unitario == null ? 0d : item.unitario) * item.quantidade);
+        }
+        FikonPagamento pagamento = new FikonPagamento();
+        pagamento.tipo = condicao.codigoTipoDocumento();
+        pagamento.chaveCondNeg = condicao.chave;
+        pagamento.rede = condicao.rede;
+        pagamento.valor = arredondar(total);
+        int parcelas = Math.max(condicao.parcelasMinimo(),
+                Math.min(condicao.parcelasMaximo(), Math.max(1, orcamento.getQtprc())));
+        pagamento.qtdParcelas = parcelas;
+        return pagamento;
     }
 
     private static Orcamento toOrcamento(Context context, FikonDocumento source,

@@ -197,7 +197,11 @@ public class LoginHelper {
         editor.putInt(CHAVE_CODFIL, codigoFilial);
         editor.putString(CHAVE_EMAIL, usuario.getEmail());
         editor.putString(CHAVE_CELULAR, usuario.getCelular());
-        editor.remove(CHAVE_LOGIN);
+        if (usuario.getLoginFluig() != null && !usuario.getLoginFluig().trim().isEmpty()) {
+            editor.putString(CHAVE_LOGIN, usuario.getLoginFluig());
+        } else {
+            editor.remove(CHAVE_LOGIN);
+        }
         editor.putString(CHAVE_GERENTE, usuario.getIsgerente());
         editor.putFloat(CHAVE_PERCDESC, (float) usuario.getPercdesconto());
         editor.putFloat(CHAVE_PERCFRETE, (float) usuario.getPercfrete());
@@ -336,7 +340,8 @@ public class LoginHelper {
         dadosUsuario.put(CHAVE_FILIALORIGANT,preferences.getString(CHAVE_FILIALORIGANT,null));
         dadosUsuario.put(CHAVE_CODUSER,String.valueOf(preferences.getInt(CHAVE_CODUSER,0)));
         dadosUsuario.put(CHAVE_URLMOTOR,preferences.getString(CHAVE_URLMOTOR,null));
-        dadosUsuario.put(CHAVE_CARGO,preferences.getString(CHAVE_CARGO,null));
+        // O login Fikon não traz cargo; várias telas fazem get("cargo").equals(...).
+        dadosUsuario.put(CHAVE_CARGO,preferences.getString(CHAVE_CARGO,""));
         dadosUsuario.put(CHAVE_IMPRIMIR,preferences.getString(CHAVE_IMPRIMIR,null));
         dadosUsuario.put(CHAVE_TOKEN, preferences.getString(CHAVE_TOKEN, null));
         dadosUsuario.put(CHAVE_TIPO_USUARIO, preferences.getString(CHAVE_TIPO_USUARIO, null));

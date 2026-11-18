@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
@@ -201,12 +202,19 @@ public class LoginActivity extends AppCompatActivity {
                                 dao.close();
                             }
 
-                            consultor = helper.ConsultarConsultor(usuarioBanco.getCpf(), usuarioBanco.getFilial(), usuarioBanco.getNome());
-                            userFluig = helper.ConsultaFluig(usuarioBanco.getCpf());
-                            if (userFluig != null) {
-                                usuarioBanco.setLoginFluig(userFluig.getContent().getLogin());
+                            // Dados do consultor vêm do login Fikon (como no Splash). Antes o app
+                            // buscava o consultor na ApiGemco e gravava o código Fikon cru
+                            // (ex.: V0042), que quebrava os Integer.parseInt(codigo) das telas.
+                            try {
+                                userFluig = helper.ConsultaFluig(usuarioBanco.getCpf());
+                                if (userFluig != null && userFluig.getContent() != null) {
+                                    usuarioBanco.setLoginFluig(userFluig.getContent().getLogin());
+                                }
+                            } catch (Exception fluigException) {
+                                Log.w("LoginFikon", "Login Fluig indisponível", fluigException);
                             }
-                            helper.SalvarUsuario(usuarioBanco, consultor);
+                            usuarioBanco.setLogin(login);
+                            helper.SalvarUsuarioFikon(usuarioBanco);
                             if (saveBiometricLogin) {
                                 SecureCredentialStore.save(LoginActivity.this, login, senha, base);
                             } else {

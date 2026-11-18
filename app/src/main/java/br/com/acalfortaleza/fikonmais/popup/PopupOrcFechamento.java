@@ -211,14 +211,16 @@ public class PopupOrcFechamento extends Activity {
                     String condicaoDescricaoSelecionada = mList.get(position).getDescricao();
                     condicao_selecionada = condicaoCodigoSelecionada;
 
-                    if(condicaoCodigoSelecionada.equals("01")){
+                    if(condicaoCodigoSelecionada.equals("01") || br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo()){
+                        // Na Fikon o preço por condição é do ERP: o orçamento vai com o preço à vista.
                         orcamento = obterOrcamentoVista();
                     }
                     else{
                         orcamento = obterOrcamentoPrazo();
                     }
 
-                    temEntrada = mList.get(position).getTemEntrada();
+                    temEntrada = mList.get(position).getTemEntrada() != null
+                            ? mList.get(position).getTemEntrada() : "N";
                     orcamento.setCondPagamento(mList.get(position));
                     logDiagnosticoPromocaoPrazoOrcamento("condicao_selecionada_antes_total", orcamento, condicaoCodigoSelecionada, condicaoDescricaoSelecionada);
                     alteraTotal(orcamento.getItens());
@@ -235,7 +237,7 @@ public class PopupOrcFechamento extends Activity {
 
                     }
                 }
-                if(item.contains("CARTAO PROPRIO")){
+                if(item.contains("CARTAO PROPRIO") && !br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo()){
 
                     Intent intent = new Intent(PopupOrcFechamento.this, PopupPlanSimulationCredz.class);
                     intent.putExtra("orcamento", orcamento);
@@ -678,6 +680,12 @@ public class PopupOrcFechamento extends Activity {
             return;
         }
 
+        if (br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo()) {
+            // Serviços de frete vinham da ApiGemco; sem rota na Fikon, usa só o valor local.
+            updateServicosFreteField(numOrc);
+            return;
+        }
+
         android.util.Log.d("FreteServico", "Buscando do servidor para orçamento " + numOrc);
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(30, TimeUnit.SECONDS)
@@ -824,8 +832,15 @@ public class PopupOrcFechamento extends Activity {
 
 
                     mList = helperLogin.getListaCondicoes(Integer.parseInt(usuarioLogado.get("codfil")));
-                    mListFases = helperLogin.GetFases();
-                    mListArquitetos = helperLogin.GetArquitetos();
+                    if (br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo()) {
+                        // Fases da obra e especificadores vinham da ApiGemco. Os campos
+                        // continuam na tela, sem lista, até existirem as rotas na Fikon.
+                        mListFases = new ArrayList<>();
+                        mListArquitetos = new ArrayList<>();
+                    } else {
+                        mListFases = helperLogin.GetFases();
+                        mListArquitetos = helperLogin.GetArquitetos();
+                    }
 
 
                     handler.post(new Runnable() {
@@ -877,10 +892,13 @@ public class PopupOrcFechamento extends Activity {
                     });
                 } catch (ParseException | XmlPullParserException | IOException e) {
                     e.printStackTrace();
+                    final String motivo = br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo() && e.getMessage() != null
+                            ? "Não foi possível carregar as condições de pagamento: " + e.getMessage()
+                            : "ocorreu um problema com o WebService, por gentileza informar ao suporte!";
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            new AlertDialog.Builder(PopupOrcFechamento.this).setTitle("Falha de Conexão").setMessage("ocorreu um problema com o WebService, por gentileza informar ao suporte!").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            new AlertDialog.Builder(PopupOrcFechamento.this).setTitle("Falha de Conexão").setMessage(motivo).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -1653,6 +1671,9 @@ public class PopupOrcFechamento extends Activity {
     }
 
     private boolean isCondicaoAPrazo(String condicaoCodigo, String condicaoDescricao) {
+        if (br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo()) {
+            return false;
+        }
         if (condicaoDescricao != null) {
             String descricaoNormalizada = condicaoDescricao.toUpperCase().trim();
             if (descricaoNormalizada.contains("A VISTA") || descricaoNormalizada.contains("AVISTA")) {
@@ -1867,7 +1888,11 @@ public class PopupOrcFechamento extends Activity {
 
 
     public Boolean validarFase() {
-
+        if (br.com.acalfortaleza.fikonmais.helper.FikonVendasClient.ativo() && (listaFase == null || listaFase.isEmpty())) {
+            // Sem lista de fases na Fikon ainda: o campo fica opcional.
+            layout_fase.setError(null);
+            return true;
+        }
 
         if (fase_selecionada.equals("N")) {
 
